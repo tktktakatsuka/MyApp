@@ -15,5 +15,6 @@ export class DashboardComponent {
   constructor() {
     this.message = 'This is a sample of Angular application.';
   }
+  
 
 }

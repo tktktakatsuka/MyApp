@@ -11,3 +11,4 @@ export const routes: Routes = [
     { path: 'menu', component: MenuComponent }
     
 ];
+

@@ -10,19 +10,68 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <base href="/">
 </head>
 
 <body>
-  <app-root></app-root>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <!--ここからコンテンツ-->
+  <div class="main">
+    <app-root></app-root>
+  </div>
+  <!--ここまでコンテンツ-->
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin = "anonymous"</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+
+  <script>console.log('hoge実施前');
+    $(function () {
+      console.log('hoge');
+
+      $.ajax({
+        url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601',
+        type: 'GET',
+        data: {
+          'applicationId': '1061100863725172366',           // アプリID
+          'genreId': 555086                                 // genreId
+
+        }
+      })
+        .done(function (data) {
+          let items = data.Items;                // 取得した商品情報群
+          let itemListHtml = '';                 // 取得した情報からHTMLを構成するための変数
+
+          console.log(data);
+
+          // 取得した商品情報群をループ
+          for (let i in items) {
+            let item = items[i].Item.itemUrl;               // 商品情報
+
+            itemListHtml += item;
+          }
+
+          // itemListHtmlをブラウザ上に表示する
+          $('.display-information-wrapper').find('ul').append(itemListHtml);
+
+        })
+        .fail(function (data) {
+          console.log(data);
+          console.log('err');
+        })
+
+    });
+
+  </script>
 
 </body>
 

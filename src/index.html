@@ -33,53 +33,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
-
-  <script>console.log('hoge実施前');
-
-
-    $('.get-information').on('click', function () {
-      console.log('ボタンクリックイベント開始');
-      $(function () {
-        console.log('hoge');
-
-        $.ajax({
-          url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601',
-          type: 'GET',
-          data: {
-            'applicationId': '1061100863725172366',           // アプリID
-            'genreId': 555086                                 // genreId
-
-          }
-        })
-          .done(function (data) {
-            let items = data.Items;                // 取得した商品情報群
-            let itemListHtml = '';                 // 取得した情報からHTMLを構成するための変数
-
-            console.log(data);
-
-            // 取得した商品情報群をループ
-            for (let i in items) {
-              let item = items[i].Item.itemUrl;               // 商品情報
-
-              itemListHtml += item;
-            }
-
-            // itemListHtmlをブラウザ上に表示する
-            $('.display-information-wrapper').find('ul').append(itemListHtml);
-
-          })
-          .fail(function (data) {
-            console.log(data);
-            console.log('err');
-          })
-
-      });
-
-    });
-
-
-  </script>
-
 </body>
 
 

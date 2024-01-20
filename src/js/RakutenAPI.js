@@ -1,7 +1,7 @@
+$('.get-information').on('click', function () {
 
-console.log('hoge実施前');
 $(function () {
-    console.log('hoge');
+    console.log('処理開始');
 
     $.ajax({
         url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601',
@@ -21,7 +21,6 @@ $(function () {
             // 取得した商品情報群をループ
             for (let i in items) {
                 let item = items[i].Item.itemUrl;               // 商品情報
-
                 itemListHtml += item;
             }
 
@@ -36,3 +35,4 @@ $(function () {
 
 });
 
+})

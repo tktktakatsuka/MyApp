@@ -25,14 +25,24 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/minireset.css/minireset.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/igniteui-angular/styles/igniteui-angular.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/js/RakutenAPI.js",
+              "./node_modules/hammerjs/hammer.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
+            },
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
             }
           },
           "configurations": {
@@ -91,9 +101,17 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/igniteui-angular/styles/igniteui-angular.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
           }
         }
       }

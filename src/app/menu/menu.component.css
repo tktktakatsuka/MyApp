@@ -1,7 +1,17 @@
 .menu {
-    background-color: #ccc;
-  }
-  .menu li {
-    padding: 4px 8px;
-    display: inline-block;
-  }
+  background-color: #ccc;
+}
+
+.menu li {
+  padding: 4px 8px;
+  display: inline-block;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

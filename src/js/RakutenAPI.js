@@ -13,19 +13,26 @@ $(function () {
         }
     })
         .done(function (data) {
-            let items = data.Items;                // 取得した商品情報群
-            let itemListHtml = '';                 // 取得した情報からHTMLを構成するための変数
-
+            let items = data.Items;                // 取得した商品情報
             console.log(data);
 
+
+            let Counter = 1;
             // 取得した商品情報群をループ
             for (let i in items) {
-                let item = items[i].Item.itemUrl;               // 商品情報
-                itemListHtml += item;
+                let itemUrl = items[i].Item.itemUrl;               // 商品情報
+                let image = items[i].Item.mediumImageUrls[0].imageUrl;    
+                let itemName = items[i].Item.itemName;    
+
+                $('.example-card').eq(i).find('img').attr('src', image);
+                $('.example-card').eq(i).find('a').attr('href', itemUrl);
+                $('.example-card').eq(i).find('.itemName').find('p').text(itemName);
+
+                Counter++;
             }
 
             // itemListHtmlをブラウザ上に表示する
-            $('.display-information-wrapper').find('ul').append(itemListHtml);
+
 
         })
         .fail(function (data) {

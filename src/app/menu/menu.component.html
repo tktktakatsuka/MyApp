@@ -1,6 +1,20 @@
 <div class="menu">
+
+  
+  <mat-form-field>
+    <mat-label>検索したいジャンルを選んでください</mat-label>
+    <mat-select id="zyanruValue">
+      @for (food of foods; track food) {
+      <mat-option  value="food.value">{{food.viewValue}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+
+
+
   <div>
-    <button type="button" class="get-information">楽天API発動！</button>
+    <button type="button" class="getinformation">楽天API発動！</button>
   </div>
 
   <!--1レコードここから-->
@@ -15,10 +29,12 @@
         </mat-card-header>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <div class="itemName"><p></p></div>
+          <div class="itemName">
+            <p></p>
+          </div>
         </mat-card-content>
         <mat-card-actions>
-          <a href=""><button mat-button>LIKE</button></a>
+          <a href=""><button mat-button>商品を購入する</button></a>
           <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>
@@ -36,10 +52,12 @@
         </mat-card-header>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <div class="itemName"><p></p></div>
+          <div class="itemName">
+            <p></p>
+          </div>
         </mat-card-content>
         <mat-card-actions>
-          <a href=""><button mat-button>LIKE</button></a>
+          <a href=""><button mat-button>商品を購入する</button></a>
           <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>
@@ -57,10 +75,12 @@
         </mat-card-header>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <div class="itemName"><p></p></div>
+          <div class="itemName">
+            <p></p>
+          </div>
         </mat-card-content>
         <mat-card-actions>
-          <a href=""><button mat-button>LIKE</button></a>
+          <a href=""><button mat-button>商品を購入する</button></a>
           <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>
@@ -78,10 +98,12 @@
         </mat-card-header>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <div class="itemName"><p></p></div>
+          <div class="itemName">
+            <p></p>
+          </div>
         </mat-card-content>
         <mat-card-actions>
-          <a href=""><button mat-button>LIKE</button></a>
+          <a href=""><button mat-button>商品を購入する</button></a>
           <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>
@@ -95,5 +117,703 @@
   </div>
   <!--1レコードここまで-->
 
+  <!--1レコードここから-->
+  <div class="row">
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
 
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+
+    <ul></ul>
+
+  </div>
+  <!--1レコードここまで-->
+
+  <!--1レコードここから-->
+  <div class="row">
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+
+    <ul></ul>
+
+  </div>
+  <!--1レコードここまで-->
+
+  <!--1レコードここから-->
+  <div class="row">
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+
+    <ul></ul>
+
+  </div>
+  <!--1レコードここまで-->
+
+  <!--1レコードここから-->
+  <div class="row">
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+
+    <ul></ul>
+
+  </div>
+  <!--1レコードここまで-->
+
+  <!--1レコードここから-->
+  <div class="row">
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+
+    <ul></ul>
+
+  </div>
+  <!--1レコードここまで-->
+
+  <!--1レコードここから-->
+  <div class="row">
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+
+    <ul></ul>
+
+  </div>
+  <!--1レコードここまで-->
+
+  <!--1レコードここから-->
+  <div class="row">
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="itemName">
+            <p></p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href=""><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
+      <br>
+    </div>
+
+
+    <ul></ul>
+
+  </div>
+  <!--1レコードここまで-->
 </div>

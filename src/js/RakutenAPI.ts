@@ -1,7 +1,12 @@
 
+
+
+
 $('.getinformation').on('click', function () {
     $(function () {
         console.log('処理開始');
+        let hoge = document.getElementById('monthdrop');
+        console.log(hoge.value);
 
         $.ajax({
             url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601',

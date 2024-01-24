@@ -12,9 +12,7 @@ interface Food {
   viewValue: string;
 }
 
-/**
- * @title Basic select
- */
+
 
 
 @Component({
@@ -25,7 +23,12 @@ interface Food {
   imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule],
 })
 
+function hoge(): void{
+  console.log('処理開始');
+}
+
 export class MenuComponent {
+  
   foods: Food[] = [
     { value: "551177", viewValue: 'メンズファッション' },
     { value: "100433", viewValue: 'インナー・下着・ナイトウェア' },

@@ -6,6 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClientModule, HttpParams, HttpParamsOptions } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { ConsoleReporter } from 'jasmine';
 
 interface Food {
   value: string;
@@ -20,15 +23,106 @@ interface Food {
   standalone: true,
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, HttpClientModule],
 })
 
-function hoge(): void{
-  console.log('処理開始');
-}
+
 
 export class MenuComponent {
-  
+
+  constructor(private http: HttpClient) { }
+
+  GET_USERS_API: any;
+  userList: any;
+
+  /**
+   * ユーザリスト取得関数
+   */
+  getUserList(): void {
+    this.GET_USERS_API = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601";
+    const hash = {
+      applicationId: '1061100863725172366',
+      genreId: '559887'
+    };
+
+    const paramsOptions = <HttpParamsOptions>{ fromObject: hash };
+    const params = new HttpParams(paramsOptions);
+    // HTTP通信
+    this.http.get(this.GET_USERS_API, { params: params }).subscribe(
+      // 通信成功　200~299の処理
+      (response) => {
+        let items = response as { Items: any };
+        console.log(items);
+
+        // 例えば、"data"というキーがある場合
+        let itemUrl1 = items['Items'];
+        console.log(itemUrl1)
+
+        let itemUrl = items['Items'].Item.itemUrl;
+        console.log(itemUrl);
+        let image = items['Items'].Item.mediumImageUrls;
+        console.log(image);
+        let itemName = items['Items'].Item.itemName;
+        console.log(itemName);
+
+        let Counter = 0;
+        // 取得した商品情報群をループ
+        for (let i in items) {
+          // let itemUrl = items[Counter].Item.itemUrl;               // 商品情報
+          // let image = items[Counter].Item.mediumImageUrls[0].imageUrl.replace("ex=128x128", "ex=256x256");
+          // let itemName = items[Counter].Item.itemName;
+
+          // $('.example-card').eq(Counter).find('img').attr('src', image);
+          // $('.example-card').eq(Counter).find('a').attr('href', itemUrl);
+          // $('.example-card').eq(Counter).find('.itemName').find('p').text(itemName);
+
+          Counter++;
+        }
+
+        console.log(response);
+        // ユーザリストにレスポンスを代入
+        this.userList = response;
+        return response;
+      },
+      // 通信失敗時の処理
+      (error) => {
+        console.error(error);
+      }
+    );
+
+    // $.ajax({
+    //     url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601',
+    //     type: 'GET',
+    //     data: {
+    //         'applicationId': '1061100863725172366',           // アプリID
+    //         'genreId': 559887                                 // genreId
+    //     }
+    // })
+    //     .done(function (data:any) {
+    //         let items = data.Items;                // 取得した商品情報
+    //         console.log(data);
+
+
+    //         let Counter = 0;
+    //         // 取得した商品情報群をループ
+    //         for (let i in items) {
+    //             let itemUrl = items[Counter].Item.itemUrl;               // 商品情報
+    //             let image = items[Counter].Item.mediumImageUrls[0].imageUrl.replace("ex=128x128", "ex=256x256");
+    //             let itemName = items[Counter].Item.itemName;
+
+    //             $('.example-card').eq(Counter).find('img').attr('src', image);
+    //             $('.example-card').eq(Counter).find('a').attr('href', itemUrl);
+    //             $('.example-card').eq(Counter).find('.itemName').find('p').text(itemName);
+
+    //             Counter++;
+    //         }
+    //     })
+    //     .fail(function (data:any) {
+    //         console.log(data);
+    //         console.log('err');
+    //     })
+  }
+
   foods: Food[] = [
     { value: "551177", viewValue: 'メンズファッション' },
     { value: "100433", viewValue: 'インナー・下着・ナイトウェア' },

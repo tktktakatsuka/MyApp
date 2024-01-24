@@ -8,7 +8,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule, HttpParams, HttpParamsOptions } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-import { ConsoleReporter } from 'jasmine';
 
 interface Food {
   value: string;
@@ -51,24 +50,29 @@ export class MenuComponent {
     this.http.get(this.GET_USERS_API, { params: params }).subscribe(
       // 通信成功　200~299の処理
       (response) => {
-        let items = response as { Items: any };
+        let res = response as { Items: any };
+        let items = res['Items'][0];
+        // 連想配列のキーと値を繰り返し取得
+        for (let key in items) {
+          if (items.hasOwnProperty(key)) {
+            console.log(`キー：${key}, 値：${items[key]}円`);
+          }
+        }
         console.log(items);
 
-        // 例えば、"data"というキーがある場合
-        let itemUrl1 = items['Items'];
-        console.log(itemUrl1)
 
-        let itemUrl = items['Items'].Item.itemUrl;
-        console.log(itemUrl);
-        let image = items['Items'].Item.mediumImageUrls;
-        console.log(image);
-        let itemName = items['Items'].Item.itemName;
-        console.log(itemName);
+
 
         let Counter = 0;
         // 取得した商品情報群をループ
-        for (let i in items) {
-          // let itemUrl = items[Counter].Item.itemUrl;               // 商品情報
+        for (let i: number = 0; i < 30; i++) {
+          let itemUrl = items['Items'][i];
+          console.log(itemUrl);
+          let image = items['Items'][i].mediumImageUrls;
+          console.log(image);
+          let itemName = items['Items'][i].itemName;
+          console.log(itemName);
+          // let itemUrl = i.Item.itemUrl;               // 商品情報
           // let image = items[Counter].Item.mediumImageUrls[0].imageUrl.replace("ex=128x128", "ex=256x256");
           // let itemName = items[Counter].Item.itemName;
 

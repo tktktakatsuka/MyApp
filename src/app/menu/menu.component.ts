@@ -1,3 +1,5 @@
+/// <reference path="JQuery.d.ts" />
+
 import { Component } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -8,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule, HttpParams, HttpParamsOptions } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import {MatDividerModule} from '@angular/material/divider';
 
 interface Food {
   value: string;
@@ -22,17 +26,34 @@ interface Food {
   standalone: true,
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, HttpClientModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatSelectModule, 
+    MatInputModule, FormsModule, HttpClientModule, CommonModule, MatDividerModule],
 })
-
-
 
 export class MenuComponent {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    
+    for (let i: number = 0; i < 30; i++) {
+      
+      this.itemUrlList.push("");
+      this.itemNameList.push("");
+      this.imageUrlList.push("https://material.angular.io/assets/img/examples/shiba2.jpg");
+    }
+  }
 
   GET_USERS_API: any;
-  userList: any;
+
+  itemUrlList: any[] = [];
+  itemNameList: any[] = [];
+  imageUrlList: any[] = [];
+  geneId: any;
+      
+
+  onFoodSelectionChange(event:any){
+    this.geneId = event.value;
+  }
+
 
   /**
    * ユーザリスト取得関数
@@ -40,8 +61,8 @@ export class MenuComponent {
   getUserList(): void {
     this.GET_USERS_API = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601";
     const hash = {
-      applicationId: '1061100863725172366',
-      genreId: '559887'
+      applicationId: "1061100863725172366",
+      genreId: this.geneId
     };
 
     const paramsOptions = <HttpParamsOptions>{ fromObject: hash };
@@ -50,81 +71,40 @@ export class MenuComponent {
     this.http.get(this.GET_USERS_API, { params: params }).subscribe(
       // 通信成功　200~299の処理
       (response) => {
-        let res = response as { Items: any };
-        let items = res['Items'][0];
-        // 連想配列のキーと値を繰り返し取得
-        for (let key in items) {
-          if (items.hasOwnProperty(key)) {
-            console.log(`キー：${key}, 値：${items[key]}円`);
-          }
-        }
-        console.log(items);
-
-
-
-
+        let res = JSON.stringify(response);
+        let parseRes = JSON.parse(res);
         let Counter = 0;
+
+        console.log(this.itemUrlList);
+
+        this.itemUrlList= [];
+        this.itemNameList= [];
+        this.imageUrlList= [];
+
         // 取得した商品情報群をループ
         for (let i: number = 0; i < 30; i++) {
-          let itemUrl = items['Items'][i];
+
+
+          let itemUrl = parseRes.Items[i].Item.itemUrl;
+          this.itemUrlList.push(itemUrl);
           console.log(itemUrl);
-          let image = items['Items'][i].mediumImageUrls;
-          console.log(image);
-          let itemName = items['Items'][i].itemName;
+
+          let imageUrl = parseRes.Items[i].Item.mediumImageUrls[0].imageUrl.replace("ex=128x128", "ex=256x256");
+          this.imageUrlList.push(imageUrl);
+          console.log(imageUrl);
+
+          let itemName = parseRes.Items[i].Item.itemName;
+          this.itemNameList.push(itemName);
           console.log(itemName);
-          // let itemUrl = i.Item.itemUrl;               // 商品情報
-          // let image = items[Counter].Item.mediumImageUrls[0].imageUrl.replace("ex=128x128", "ex=256x256");
-          // let itemName = items[Counter].Item.itemName;
 
-          // $('.example-card').eq(Counter).find('img').attr('src', image);
-          // $('.example-card').eq(Counter).find('a').attr('href', itemUrl);
-          // $('.example-card').eq(Counter).find('.itemName').find('p').text(itemName);
-
-          Counter++;
+          console.log(this.imageUrlList[0]);
         }
-
-        console.log(response);
-        // ユーザリストにレスポンスを代入
-        this.userList = response;
-        return response;
       },
       // 通信失敗時の処理
       (error) => {
         console.error(error);
       }
     );
-
-    // $.ajax({
-    //     url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601',
-    //     type: 'GET',
-    //     data: {
-    //         'applicationId': '1061100863725172366',           // アプリID
-    //         'genreId': 559887                                 // genreId
-    //     }
-    // })
-    //     .done(function (data:any) {
-    //         let items = data.Items;                // 取得した商品情報
-    //         console.log(data);
-
-
-    //         let Counter = 0;
-    //         // 取得した商品情報群をループ
-    //         for (let i in items) {
-    //             let itemUrl = items[Counter].Item.itemUrl;               // 商品情報
-    //             let image = items[Counter].Item.mediumImageUrls[0].imageUrl.replace("ex=128x128", "ex=256x256");
-    //             let itemName = items[Counter].Item.itemName;
-
-    //             $('.example-card').eq(Counter).find('img').attr('src', image);
-    //             $('.example-card').eq(Counter).find('a').attr('href', itemUrl);
-    //             $('.example-card').eq(Counter).find('.itemName').find('p').text(itemName);
-
-    //             Counter++;
-    //         }
-    //     })
-    //     .fail(function (data:any) {
-    //         console.log(data);
-    //         console.log('err');
-    //     })
   }
 
   foods: Food[] = [

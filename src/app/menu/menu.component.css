@@ -16,6 +16,27 @@
   background-size: cover;
 }
 
-.zyanruform{
+.zyanruform {
   width: 400px;
+}
+
+.img-frame{
+  /* 縦横300pxにがっちり固定 */
+  width: 400px;
+  height: 300px;
+  /* 固定した幅からはみ出たものは隠してしまう */
+  overflow: hidden;
+}
+
+img {
+  width: 400px;
+  height: 300px;
+  
+}
+
+img:hover {
+  /* ヌルッと動くように */
+  transition: 0.3s;
+  /* transformは変形プロパティ。値にscaleを指定すると拡大縮小することができる。 */
+  transform: scale(1.3);
 }

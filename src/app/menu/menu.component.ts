@@ -73,23 +73,27 @@ export class MenuComponent {
       (response) => {
         let res = JSON.stringify(response);
         let parseRes = JSON.parse(res);
-        let Counter = 0;
+        console.log(parseRes);
 
-        console.log(this.itemUrlList);
-
+        //画面呼び出し時にデータを入れているので初期化する。
         this.itemUrlList= [];
         this.itemNameList= [];
         this.imageUrlList= [];
 
         // 取得した商品情報群をループ
         for (let i: number = 0; i < 30; i++) {
-
-
           let itemUrl = parseRes.Items[i].Item.itemUrl;
           this.itemUrlList.push(itemUrl);
           console.log(itemUrl);
 
-          let imageUrl = parseRes.Items[i].Item.mediumImageUrls[0].imageUrl.replace("ex=128x128", "ex=256x256");
+          
+          let imageUrl = parseRes.Items[i].Item.mediumImageUrls[0].imageUrl;
+          if(imageUrl.indexOf('_ex=128x128')){
+            imageUrl = imageUrl.replace("_ex=128x128", "_ex=256x256");
+          }else{
+            imageUrl = imageUrl + "?_ex=256x256";
+          }
+          
           this.imageUrlList.push(imageUrl);
           console.log(imageUrl);
 

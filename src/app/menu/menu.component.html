@@ -2,7 +2,7 @@
 
   <br>
   <mat-form-field class="zyanruform">
-    <mat-label >好きなジャンルを選択してね</mat-label>
+    <mat-label>好きなジャンルを選択してね</mat-label>
     <mat-select (selectionChange)="onFoodSelectionChange($event)">
       @for (food of foods; track food) {
       <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
@@ -10,17 +10,18 @@
     </mat-select>
   </mat-form-field>
 
-  
+
   <section>
     <div class="example-button-row">
-      <button (click)="getUserList()" id="rakutenButton" class="getinformation" mat-raised-button color="primary">楽天商品ランキング検索！</button>
+      <button (click)="getUserList()" id="rakutenButton" class="getinformation" mat-raised-button
+        color="primary">楽天商品ランキング検索！</button>
     </div>
   </section>
   <br>
-  
 
-  
-  
+
+
+
 
   <!--1レコードここから-->
   <div class="row">
@@ -32,7 +33,9 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[0]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+          <a href={{itemUrlList[0]}}><img mat-card-image src={{imageUrlList[0]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[0]}}</p>
@@ -41,6 +44,7 @@
         <mat-card-actions>
           <a href={{itemUrlList[0]}}><button mat-button>商品を購入する</button></a>
           <button mat-button>SHARE</button>
+
         </mat-card-actions>
       </mat-card>
       <!--ここまでカード-->
@@ -55,7 +59,9 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[1]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+          <a href={{itemUrlList[1]}}><img mat-card-image src={{imageUrlList[1]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[1]}}</p>
@@ -78,7 +84,9 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[2]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+          <a href={{itemUrlList[2]}}><img mat-card-image src={{imageUrlList[2]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[2]}}</p>
@@ -101,7 +109,9 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[3]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+          <a href={{itemUrlList[3]}}><img mat-card-image src={{imageUrlList[3]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[3]}}</p>
@@ -130,7 +140,11 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[4]}} alt="Photo of a Shiba Inu">
+
+        <div class="img-frame">
+          <a href={{itemUrlList[4]}}><img mat-card-image src={{imageUrlList[4]}} alt="Photo of a Shiba Inu"></a>
+        </div>
+
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[4]}}</p>
@@ -153,7 +167,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[5]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[5]}}><img mat-card-image src={{imageUrlList[5]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[5]}}</p>
@@ -176,7 +193,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[6]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[6]}}><img mat-card-image src={{imageUrlList[6]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[6]}}</p>
@@ -199,7 +219,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[7]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[7]}}><img mat-card-image src={{imageUrlList[7]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[7]}}</p>
@@ -227,7 +250,11 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[8]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[8]}}><img mat-card-image src={{imageUrlList[8]}} alt="Photo of a Shiba Inu"></a>
+        </div>
+
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[8]}}</p>
@@ -250,7 +277,12 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[9]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[9]}}><img mat-card-image src={{imageUrlList[9]}} alt="Photo of a Shiba Inu"></a>
+        </div>
+
+
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[9]}}</p>
@@ -273,7 +305,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[10]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[10]}}><img mat-card-image src={{imageUrlList[10]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[10]}}</p>
@@ -296,7 +331,12 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[11]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[11]}}> <img mat-card-image src={{imageUrlList[11]}} alt="Photo of a Shiba Inu"></a>
+        </div>
+
+
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[11]}}</p>
@@ -324,7 +364,12 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[12]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+          <div class="img-frame">
+
+            <a href={{itemUrlList[12]}}><img mat-card-image src={{imageUrlList[12]}} alt="Photo of a Shiba Inu"></a>
+          </div>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[12]}}</p>
@@ -347,7 +392,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[13]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[13]}}><img mat-card-image src={{imageUrlList[13]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[13]}}</p>
@@ -370,7 +418,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[14]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[14]}}><img mat-card-image src={{imageUrlList[14]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[14]}}</p>
@@ -393,7 +444,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[15]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[15]}}><img mat-card-image src={{imageUrlList[15]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[15]}}</p>
@@ -421,7 +475,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[16]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[16]}}><img mat-card-image src={{imageUrlList[16]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[16]}}</p>
@@ -444,7 +501,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[17]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[17]}}><img mat-card-image src={{imageUrlList[17]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[17]}}</p>
@@ -467,7 +527,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[18]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[18]}}><img mat-card-image src={{imageUrlList[18]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[18]}}</p>
@@ -490,7 +553,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[19]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[19]}}> <img mat-card-image src={{imageUrlList[19]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[19]}}</p>
@@ -520,8 +586,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[20]}} alt="Photo of a Shiba Inu">
-        <mat-card-content>
+        <div class="img-frame">
+
+          <a href={{itemUrlList[20]}}><img mat-card-image src={{imageUrlList[20]}} alt="Photo of a Shiba Inu"></a>
+        </div> <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[20]}}</p>
           </div>
@@ -543,7 +611,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[21]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[21]}}><img mat-card-image src={{imageUrlList[21]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[21]}}</p>
@@ -566,7 +637,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[22]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[22]}}><img mat-card-image src={{imageUrlList[22]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[22]}}</p>
@@ -589,7 +663,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[23]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[23]}}><img mat-card-image src={{imageUrlList[23]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[23]}}</p>
@@ -607,7 +684,7 @@
   </div>
   <!--1レコードここまで-->
 
-  
+
   <!--1レコードここから-->
   <div class="row">
 
@@ -620,7 +697,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[24]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[24]}}><img mat-card-image src={{imageUrlList[24]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[24]}}</p>
@@ -643,7 +723,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[25]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[25]}}><img mat-card-image src={{imageUrlList[25]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[25]}}</p>
@@ -666,7 +749,10 @@
           <mat-card-title>Shiba Inu</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src={{imageUrlList[26]}} alt="Photo of a Shiba Inu">
+        <div class="img-frame">
+
+          <a href={{itemUrlList[26]}}><img mat-card-image src={{imageUrlList[26]}} alt="Photo of a Shiba Inu"></a>
+        </div>
         <mat-card-content>
           <div class="itemName">
             <p>{{itemNameList[26]}}</p>
@@ -679,34 +765,37 @@
       </mat-card>
       <!--ここまでカード-->
 
-    
-        <br>
-      </div>
 
-      <div class="col-sm-3">
-        <!--ここからカード-->
-        <mat-card class="example-card" id="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src={{imageUrlList[27]}} alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <div class="itemName">
-              <p>{{itemNameList[27]}}</p>
-            </div>
-          </mat-card-content>
-          <mat-card-actions>
-            <a href={{itemUrlList[27]}}><button mat-button>商品を購入する</button></a>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-        <!--ここまでカード-->
+      <br>
+    </div>
+
+    <div class="col-sm-3">
+      <!--ここからカード-->
+      <mat-card class="example-card" id="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <div class="img-frame">
+
+          <a href={{itemUrlList[27]}}><img mat-card-image src={{imageUrlList[27]}} alt="Photo of a Shiba Inu"></a>
+        </div>
+        <mat-card-content>
+          <div class="itemName">
+            <p>{{itemNameList[27]}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <a href={{itemUrlList[27]}}><button mat-button>商品を購入する</button></a>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!--ここまでカード-->
 
       <br>
 
-      
+
     </div>
     <ul></ul>
   </div>

@@ -11,6 +11,8 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <base href="https://myapp-4c3c5.web.app/browser/"> -->
+  <base href="/">
 </head>
 
 <body>
@@ -28,10 +30,34 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-  <base href="/">
+    crossorigin="anonymous"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+
+  </script>
+
+  <!--モーダル表示ここから-->
+  <script>
+    $(window).on('load', function () {
+      
+      // モーダル削除実行
+      console.log('モーダル削除');
+      //取得
+      let modalContents = $('#exampleModalToggle')
+      let modalBackGround = $('.modal-backdrop');
+
+      //削除
+      modalContents.removeClass('show');
+      modalContents.css('display', 'none');
+      modalBackGround.removeClass('show');
+      console.log('モーダル削除完了');
+    });
+  </script>
+  <!--モーダル表示ここまで-->
+
+
 </body>
 
 

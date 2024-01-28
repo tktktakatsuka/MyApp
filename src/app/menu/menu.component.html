@@ -1,5 +1,32 @@
 <div class="menu">
 
+  <!-- modalここから -->
+  <div class="modal fade show" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+    style="display: block;" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">読込中</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body">
+          <button (click)="closeModal()" id="rakutenButton" class="" mat-raised-button color="primary">モーダル削除</button>
+          <mat-spinner></mat-spinner>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+  <!-- モーダルここまで -->
+
+  <!-- ジャンル選択フォームここから -->
   <br>
   <mat-form-field class="zyanruform">
     <mat-label>好きなジャンルを選択してね</mat-label>
@@ -9,8 +36,9 @@
       }
     </mat-select>
   </mat-form-field>
+  <!-- ジャンル選択フォームここまで -->
 
-
+  <!-- 楽天検索ボタンここから -->
   <section>
     <div class="example-button-row">
       <button (click)="getUserList()" id="rakutenButton" class="getinformation" mat-raised-button
@@ -18,10 +46,7 @@
     </div>
   </section>
   <br>
-
-
-
-
+  <!-- 楽天検索ボタンここまで -->
 
   <!--1レコードここから-->
   <div class="row">
@@ -792,16 +817,10 @@
         </mat-card-actions>
       </mat-card>
       <!--ここまでカード-->
-
       <br>
-
-
     </div>
     <ul></ul>
   </div>
   <!--1レコードここまで-->
-
-
-
-
 </div>
+

@@ -31,7 +31,6 @@
               "node_modules/igniteui-angular/styles/igniteui-angular.css"
             ],
             "scripts": [
-              "src/js/RakutenAPI.ts",
               "./node_modules/hammerjs/hammer.min.js"
             ],
             "server": "src/main.server.ts",

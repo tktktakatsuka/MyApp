@@ -1,4 +1,3 @@
-/// <reference path="JQuery.d.ts" />
 
 import { Component } from '@angular/core';
 
@@ -11,31 +10,30 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule, HttpParams, HttpParamsOptions } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 interface Food {
   value: string;
   viewValue: string;
 }
 
-
-
-
 @Component({
   selector: 'app-menu',
   standalone: true,
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatSelectModule, 
-    MatInputModule, FormsModule, HttpClientModule, CommonModule, MatDividerModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatSelectModule,
+    MatInputModule, FormsModule, HttpClientModule, CommonModule, MatDividerModule, MatProgressSpinnerModule],
 })
 
 export class MenuComponent {
 
   constructor(private http: HttpClient) {
-    
+
     for (let i: number = 0; i < 30; i++) {
-      
+
       this.itemUrlList.push("");
       this.itemNameList.push("");
       this.imageUrlList.push("https://material.angular.io/assets/img/examples/shiba2.jpg");
@@ -48,10 +46,39 @@ export class MenuComponent {
   itemNameList: any[] = [];
   imageUrlList: any[] = [];
   geneId: any;
-      
 
-  onFoodSelectionChange(event:any){
+
+  onFoodSelectionChange(event: any) {
     this.geneId = event.value;
+  }
+
+  //モーダルopen
+  openModal(): void {
+    console.log('モーダルopen');
+    let modalContents = $('#exampleModalToggle');
+    modalContents.addClass('show');
+    modalContents.css('display', 'block');
+
+    console.log('モーダルopen完了');
+  }
+
+  //モーダル削除
+  async closeModal(): Promise<void> {
+    const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
+    await sleep(2000);
+    // モーダル削除実行
+    console.log('モーダル削除');
+    //取得
+    let modalContents = $('#exampleModalToggle')
+    let modalBackGround = $('.modal-backdrop');
+    console.log(modalContents);
+    console.log(modalBackGround);
+    //削除
+    modalContents.removeClass('show');
+    modalBackGround.removeClass('show');
+    modalContents.css('display', 'none');
+    console.log('モーダル削除完了');
+    
   }
 
 
@@ -59,6 +86,7 @@ export class MenuComponent {
    * ユーザリスト取得関数
    */
   getUserList(): void {
+    this.openModal();
     this.GET_USERS_API = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601";
     const hash = {
       applicationId: "1061100863725172366",
@@ -76,9 +104,9 @@ export class MenuComponent {
         console.log(parseRes);
 
         //画面呼び出し時にデータを入れているので初期化する。
-        this.itemUrlList= [];
-        this.itemNameList= [];
-        this.imageUrlList= [];
+        this.itemUrlList = [];
+        this.itemNameList = [];
+        this.imageUrlList = [];
 
         // 取得した商品情報群をループ
         for (let i: number = 0; i < 30; i++) {
@@ -86,14 +114,14 @@ export class MenuComponent {
           this.itemUrlList.push(itemUrl);
           console.log(itemUrl);
 
-          
+
           let imageUrl = parseRes.Items[i].Item.mediumImageUrls[0].imageUrl;
-          if(imageUrl.indexOf('_ex=128x128')){
+          if (imageUrl.indexOf('_ex=128x128')) {
             imageUrl = imageUrl.replace("_ex=128x128", "_ex=256x256");
-          }else{
+          } else {
             imageUrl = imageUrl + "?_ex=256x256";
           }
-          
+
           this.imageUrlList.push(imageUrl);
           console.log(imageUrl);
 
@@ -102,11 +130,14 @@ export class MenuComponent {
           console.log(itemName);
 
           console.log(this.imageUrlList[0]);
+          this.closeModal();
         }
       },
       // 通信失敗時の処理
       (error) => {
         console.error(error);
+        this.closeModal();
+
       }
     );
   }

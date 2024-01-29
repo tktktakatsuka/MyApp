@@ -45,6 +45,7 @@ export class MenuComponent {
   itemUrlList: any[] = [];
   itemNameList: any[] = [];
   imageUrlList: any[] = [];
+  shopNamelList: any[] = [];
   geneId: any;
 
 

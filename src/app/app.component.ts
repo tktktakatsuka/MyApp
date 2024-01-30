@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from "./menu/menu.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { LoadingSpinnerComponent } from "./loading-spinner/loading-spinner.component";
+
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -15,7 +15,7 @@ import { IgxCardModule } from 'igniteui-angular';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, MenuComponent, DashboardComponent, LoadingSpinnerComponent,  
+    imports: [CommonModule, RouterOutlet, MenuComponent, DashboardComponent,  
       MatSlideToggleModule, MatIconModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, IgxCardModule]
     
 })

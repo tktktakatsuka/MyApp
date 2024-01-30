@@ -13,7 +13,8 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <base href="/">
+  <base href="https://www.rankingmatome.com/">
+  <!-- <base href="/"> -->
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHR21FMC2D"></script>
@@ -48,7 +49,6 @@
     $(window).on('load', function () {
 
       // モーダル削除実行
-      console.log('モーダル削除');
       //取得
       let modalContents = $('#exampleModalToggle')
       let modalBackGround = $('.modal-backdrop');
@@ -57,7 +57,6 @@
       modalContents.removeClass('show');
       modalContents.css('display', 'none');
       modalBackGround.removeClass('show');
-      console.log('モーダル削除完了');
     });
   </script>
   <!--モーダル表示ここまで-->

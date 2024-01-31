@@ -65,7 +65,8 @@ export class MenuComponent {
   //モーダル削除
   async closeModal(): Promise<void> {
     const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
-    await sleep(2000);
+    // 時間設定
+    await sleep(1000);
     // モーダル削除実行
 
     //取得

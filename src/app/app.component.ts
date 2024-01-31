@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { MenuComponent } from "./menu/menu.component";
+import { MenuComponent } from "./shohin/menu.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -10,19 +10,24 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { IgxCardModule } from 'igniteui-angular';
+
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [CommonModule, RouterOutlet, MenuComponent, DashboardComponent,  
-      MatSlideToggleModule, MatIconModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, IgxCardModule]
+      MatSlideToggleModule, MatIconModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, IgxCardModule,MatSidenavModule, MatButtonModule]
     
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'MyApp';
-
-  // コンポーネントの初期化時に JavaScript を呼び出す
-  ngOnInit() {
-  }
+  showFiller = false;
 }
+
+
+
+
+  

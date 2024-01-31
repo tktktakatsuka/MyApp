@@ -1,10 +1,44 @@
-.wrapper{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .fotter {
-    flex: 1;
-    
-  }
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.fotter {
+  flex: 1;
+
+}
+
+mat-sidenav-content {
+  height: 100vh;
+}
+
+mat-sidenav {
+  background-color: #3f51b5;
+  color: white;
+  width: 210px;
+}
+
+.white-icon {
+  color: white;
+}
+
+.menu-icon {
+  padding-right: 20px;
+}
+
+span {
+  color: white;
+}
+
+a.list-group-item {
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+  font-size: 18px;
+  border: 1px dashed #333333;
+
+}
+
+a.list-group-item-action:hover {
+  background-color: #076b7a;
+}

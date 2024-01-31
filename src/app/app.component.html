@@ -4,7 +4,7 @@
     <div class="main">
         <!--ここからヘッダー-->
         <mat-toolbar color="primary">
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <button  (click)="sidenav.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
                 <mat-icon>menu</mat-icon>
             </button>
             <span>楽天商品検索 アプリ</span>
@@ -16,13 +16,37 @@
                 <mat-icon>share</mat-icon>
             </button>
         </mat-toolbar>
-        <!--ここまでヘッダー-->
 
-        <router-outlet></router-outlet>
+        <mat-sidenav-container>
+            <mat-sidenav mode="side" opened #sidenav>
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action" href="/">
+                        <i class="bi bi-house-door-fill white-icon menu-icon"></i><span>商品ランキング</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action">
+                        <i class="bi bi-code-slash white-icon menu-icon"></i><span>本を追加したいよ</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action">
+                        <i class="bi bi-book white-icon menu-icon"></i><span>なにかを追加予定</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action">
+                        <i class="bi bi-vector-pen white-icon menu-icon"></i><span>お問い合わせ</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action">
+                        <i class="bi bi-terminal white-icon menu-icon"></i><span>↑すべてまだ開発中なので遷移しないよ</span>
+                    </a>
+                </div>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <!-- メインコンテンツの内容はここに記述する。 -->
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+        <!--ここまでヘッダー-->
 
         <!--ここからフッター-->
         <mat-toolbar color="primary" class="fotter">
-            <span>fotter  </span>
+            <span>fotter </span>
             <small> &copy; tktkCompany rankingmatome Co. Ltd. 2024 </small>
         </mat-toolbar>
         <!--ここまでフッター-->

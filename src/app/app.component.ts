@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { MenuComponent } from "./shohin/menu.component";
+import { MenuComponent } from "./menu/menu.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';

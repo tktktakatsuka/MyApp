@@ -31,12 +31,7 @@ interface Food {
 export class RecipeComponent implements AfterViewInit {
 
   constructor(private http: HttpClient) {
-    for (let i: number = 0; i < 30; i++) {
-      this.itemUrlList.push("/");
-      this.itemNameList.push("商品の説明が表示されます。最初の写真は柴犬です。");
-      this.imageUrlList.push("https://material.angular.io/assets/img/examples/shiba2.jpg");
-      this.shopNameList.push("サブタイトルが表示されます");
-    }
+    this.getUserList();
   }
 
   GET_USERS_API: any;
@@ -55,46 +50,22 @@ export class RecipeComponent implements AfterViewInit {
     this.geneId = event.value;
   }
 
-  //モーダルopen
-  openModal(): void {
-    let modalContents = $('#exampleModalToggle');
-    modalContents.addClass('show');
-    modalContents.css('display', 'block');
-  }
 
-  //モーダル削除
-  async closeModal(): Promise<void> {
-    const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
-    // 時間設定
-    await sleep(1000);
-    // モーダル削除実行
 
-    //取得
-    let modalContents = $('#exampleModalToggle')
-    let modalBackGround = $('.modal-backdrop');
-    //削除
-    modalContents.removeClass('show');
-    modalBackGround.removeClass('show');
-    modalContents.css('display', 'none');
+  
 
-  }
 
 
   /**
    * ユーザリスト取得関数
    */
   getUserList(): void {
-    this.openModal();
-    this.GET_USERS_API = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601";
+
+    this.GET_USERS_API = "https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json";
     const hash = {
       applicationId: "1061100863725172366",
-      genreId: this.geneId,
       affiliateId: "30bf3760.a2dfbb1f.30bf3761.e6ea1a7d"
     };
-
-    if (this.geneId == "") {
-      delete hash.genreId;
-    }
 
     const paramsOptions = <HttpParamsOptions>{ fromObject: hash };
     const params = new HttpParams(paramsOptions);
@@ -114,90 +85,31 @@ export class RecipeComponent implements AfterViewInit {
         this.shopNameList = [];
 
         // 取得した商品情報群をループ
-        for (let i: number = 0; i < 30; i++) {
+        for (let i: number = 0; i < 4; i++) {
           // カードへ設定する配列を設定
-          let itemUrl = parseRes.Items[i].Item.affiliateUrl;
-          this.itemUrlList.push(itemUrl);
-          let itemPrice = parseRes.Items[i].Item.itemPrice;
-          this.itemPriceList.push(itemPrice + "円");
-          let imageUrl = parseRes.Items[i].Item.mediumImageUrls[0].imageUrl;
-          if (imageUrl.indexOf('_ex=128x128')) {
-            imageUrl = imageUrl.replace("_ex=128x128", "_ex=256x256");
+          let recipeUrl = parseRes.result[i].recipeUrl;
+          this.itemUrlList.push(recipeUrl);
+          let recipeCost = parseRes.result[i].recipeCost;
+          let recipeIndication = parseRes.result[i].recipeIndication;
+          this.itemPriceList.push(recipeCost + "/" + recipeIndication  +"で作れる！" );
+          let imageUrl = parseRes.result[i].foodImageUrl;
+          if (imageUrl.indexOf('?_ex=128x128')) {
+            imageUrl = imageUrl.replace("?_ex=128x128", "_ex=256x256");
           } else {
             imageUrl = imageUrl + "?_ex=256x256";
           }
           this.imageUrlList.push(imageUrl);
-          let itemName = parseRes.Items[i].Item.itemName;
-          this.itemNameList.push(itemName);
-          let shopName: String = parseRes.Items[i].Item.shopName;
-          this.shopNameList.push("shopName : " + shopName);
-
-          this.closeModal();
+          let recipeDescription = parseRes.result[i].recipeDescription;
+          this.itemNameList.push(recipeDescription);
+          let nickname: String = parseRes.result[i].nickname;
+          this.shopNameList.push("ニックネーム　：　" + nickname);
         }
       },
       // 通信失敗時の処理
       (error) => {
         console.error(error);
-        this.closeModal();
-
       }
     );
-  }
-
-  /**
- * ユーザリスト取得関数
- */
-  getSyokaiLoad(): void {
-    if (this.syokaiFlg) {
-      this.GET_USERS_API = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601";
-      const hash = {
-        applicationId: "1061100863725172366",
-        affiliateId: "30bf3760.a2dfbb1f.30bf3761.e6ea1a7d"
-      };
-      const paramsOptions = <HttpParamsOptions>{ fromObject: hash };
-      const params = new HttpParams(paramsOptions);
-      // HTTP通信
-      this.http.get(this.GET_USERS_API, { params: params }).subscribe(
-        // 通信成功　200~299の処理
-        (response) => {
-          let res = JSON.stringify(response);
-          let parseRes = JSON.parse(res);
-          //画面呼び出し時にデータを入れているので初期化する。
-          this.itemUrlList = [];
-          this.itemNameList = [];
-          this.imageUrlList = [];
-          this.itemPriceList = [];
-          this.shopNameList = [];
-
-          // 取得した商品情報群をループ
-          for (let i: number = 0; i < 30; i++) {
-            // カードへ設定する配列を設定
-            let itemUrl = parseRes.Items[i].Item.affiliateUrl;
-            this.itemUrlList.push(itemUrl);
-            let itemPrice = parseRes.Items[i].Item.itemPrice;
-            this.itemPriceList.push(itemPrice + "円");
-            let imageUrl = parseRes.Items[i].Item.mediumImageUrls[0].imageUrl;
-            if (imageUrl.indexOf('_ex=128x128')) {
-              imageUrl = imageUrl.replace("_ex=128x128", "_ex=256x256");
-            } else {
-              imageUrl = imageUrl + "?_ex=256x256";
-            }
-            this.imageUrlList.push(imageUrl);
-            let itemName = parseRes.Items[i].Item.itemName;
-            this.itemNameList.push(itemName);
-            let shopName = parseRes.Items[i].Item.shopName;
-            this.shopNameList.push("shopName : " + shopName);
-
-            this.closeModal();
-          }
-        },
-        // 通信失敗時の処理
-        (error) => {
-          console.error(error);
-          this.closeModal();
-        }
-      );
-    }
   }
 
   foods: Food[] = [

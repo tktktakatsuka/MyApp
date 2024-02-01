@@ -1,5 +1,6 @@
 .menu {
   background-color: #ccc;
+
 }
 
 .menu li {
@@ -12,28 +13,19 @@
 }
 
 .example-header-image {
-  background-image: url('./服のイラスト素材.jpeg');
+  background-image: url('./cart.png');
   background-size: cover;
 }
 
-.zyanruform {
-  width: 400px;
-}
+
 
 .img-frame{
-  /* 縦横300pxにがっちり固定 */
-  /* width: 400px;
-  height: 300px; */
-  /* 固定した幅からはみ出たものは隠してしまう */
   overflow: hidden;
   margin: 0 auto;
 }
 
 img {
-  /* width: 400px;
-  height: 300px; */
   margin: 0 auto;
-  
 }
 
 img:hover {
@@ -44,13 +36,25 @@ img:hover {
 }
 
 .zyanruform{
-  margin-left:20px;
+  width: 400px;
+  margin-left:  20px;  
 }
+
+.divZyanruform{
+  display: inline-grid !important;
+  margin:  0 auto !important;  
+}
+
 
 .example-button-row{
-  margin-left:20px;
+  margin-left:  20px;  
 }
 
+.title{
+  text-align:center;
+  color: rgb(3, 20, 22);
+  font-size: 20px;
+}
 
 
 

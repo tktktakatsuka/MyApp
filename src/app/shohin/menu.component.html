@@ -1,5 +1,11 @@
 <div class="menu">
 
+  <br>
+  <strong class="title">
+    <h1>楽天ジャンル別ランキング(1-28位)</h1>
+  </strong>
+  <br>
+
   <!-- modalここから -->
   <div class="modal fade show" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
     style="display: block;" aria-hidden="false">
@@ -20,17 +26,20 @@
 
   <!-- ジャンル選択フォームここから -->
   <br>
-  <mat-form-field class="zyanruform">
-    <mat-label>好きなジャンルを選択してね</mat-label>
-    <mat-select (selectionChange)="onFoodSelectionChange($event)">
-      @for (food of foods; track food) {
-      <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
+  <div class="divZyanruform">
+    <mat-form-field class="zyanruform">
+      <mat-label>好きなジャンルを選択してね</mat-label>
+      <mat-select (selectionChange)="onFoodSelectionChange($event)">
+        @for (food of foods; track food) {
+        <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
   <!-- ジャンル選択フォームここまで -->
 
   <!-- 楽天検索ボタンここから -->
+
   <section>
     <div class="example-button-row">
       <button (click)="getUserList()" id="rakutenButton" class="getinformation" mat-raised-button
@@ -38,6 +47,7 @@
     </div>
   </section>
   <br>
+
   <!-- 楽天検索ボタンここまで -->
 
   <!--1レコードここから-->

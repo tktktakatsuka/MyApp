@@ -4,16 +4,17 @@
     <div class="main">
         <!--ここからヘッダー-->
         <mat-toolbar color="primary">
-            <button  (click)="sidenav.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <button (click)="sidenav.toggle()" mat-icon-button class="example-icon"
+                aria-label="Example icon-button with menu icon">
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>楽天商品検索 アプリ</span>
+            <a href="/"><span>楽天商品検索 アプリ</span></a>
             <span class="example-spacer"></span>
             <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon>favorite</mat-icon>
+                <!-- <mat-icon>favorite</mat-icon> -->
             </button>
             <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-                <mat-icon>share</mat-icon>
+                <!-- <mat-icon>share</mat-icon> -->
             </button>
         </mat-toolbar>
 
@@ -46,10 +47,13 @@
 
         <!--ここからフッター-->
         <mat-toolbar color="primary" class="fotter">
-            <span>fotter </span>
+            <span></span>
             <small> &copy; tktkCompany rankingmatome Co. Ltd. 2024 </small>
         </mat-toolbar>
         <!--ここまでフッター-->
     </div>
     <!--ここまでコンテンツ-->
 </div>
+
+
+

@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -28,13 +28,12 @@ interface Food {
     MatInputModule, FormsModule, HttpClientModule, CommonModule, MatDividerModule, MatProgressSpinnerModule],
 })
 
-export class MenuComponent {
+export class MenuComponent implements AfterViewInit {
 
   constructor(private http: HttpClient) {
     for (let i: number = 0; i < 30; i++) {
-
       this.itemUrlList.push("/");
-      this.itemNameList.push("商品の説明が表示されます");
+      this.itemNameList.push("商品の説明が表示されます。最初の写真は柴犬です。");
       this.imageUrlList.push("https://material.angular.io/assets/img/examples/shiba2.jpg");
       this.shopNameList.push("サブタイトルが表示されます");
     }
@@ -49,6 +48,7 @@ export class MenuComponent {
   shopNameList: any[] = [];
   itemPriceList: any[] = [];
   geneId: any;
+  syokaiFlg = true;
 
 
   onFoodSelectionChange(event: any) {
@@ -92,6 +92,10 @@ export class MenuComponent {
       affiliateId: "30bf3760.a2dfbb1f.30bf3761.e6ea1a7d"
     };
 
+    if (this.geneId == "") {
+      delete hash.genreId;
+    }
+
     const paramsOptions = <HttpParamsOptions>{ fromObject: hash };
     const params = new HttpParams(paramsOptions);
     // HTTP通信
@@ -125,7 +129,7 @@ export class MenuComponent {
           this.imageUrlList.push(imageUrl);
           let itemName = parseRes.Items[i].Item.itemName;
           this.itemNameList.push(itemName);
-          let shopName = parseRes.Items[i].Item.shopName;
+          let shopName: String = parseRes.Items[i].Item.shopName;
           this.shopNameList.push("shopName : " + shopName);
 
           this.closeModal();
@@ -140,7 +144,64 @@ export class MenuComponent {
     );
   }
 
+  /**
+ * ユーザリスト取得関数
+ */
+  getSyokaiLoad(): void {
+    if (this.syokaiFlg) {
+      this.GET_USERS_API = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601";
+      const hash = {
+        applicationId: "1061100863725172366",
+        affiliateId: "30bf3760.a2dfbb1f.30bf3761.e6ea1a7d"
+      };
+      const paramsOptions = <HttpParamsOptions>{ fromObject: hash };
+      const params = new HttpParams(paramsOptions);
+      // HTTP通信
+      this.http.get(this.GET_USERS_API, { params: params }).subscribe(
+        // 通信成功　200~299の処理
+        (response) => {
+          let res = JSON.stringify(response);
+          let parseRes = JSON.parse(res);
+          //画面呼び出し時にデータを入れているので初期化する。
+          this.itemUrlList = [];
+          this.itemNameList = [];
+          this.imageUrlList = [];
+          this.itemPriceList = [];
+          this.shopNameList = [];
+
+          // 取得した商品情報群をループ
+          for (let i: number = 0; i < 30; i++) {
+            // カードへ設定する配列を設定
+            let itemUrl = parseRes.Items[i].Item.affiliateUrl;
+            this.itemUrlList.push(itemUrl);
+            let itemPrice = parseRes.Items[i].Item.itemPrice;
+            this.itemPriceList.push(itemPrice + "円");
+            let imageUrl = parseRes.Items[i].Item.mediumImageUrls[0].imageUrl;
+            if (imageUrl.indexOf('_ex=128x128')) {
+              imageUrl = imageUrl.replace("_ex=128x128", "_ex=256x256");
+            } else {
+              imageUrl = imageUrl + "?_ex=256x256";
+            }
+            this.imageUrlList.push(imageUrl);
+            let itemName = parseRes.Items[i].Item.itemName;
+            this.itemNameList.push(itemName);
+            let shopName = parseRes.Items[i].Item.shopName;
+            this.shopNameList.push("shopName : " + shopName);
+
+            this.closeModal();
+          }
+        },
+        // 通信失敗時の処理
+        (error) => {
+          console.error(error);
+          this.closeModal();
+        }
+      );
+    }
+  }
+
   foods: Food[] = [
+    { value: "", viewValue: '総合ランキング' },
     { value: "551177", viewValue: 'メンズファッション' },
     { value: "100433", viewValue: 'インナー・下着・ナイトウェア' },
     { value: "216131", viewValue: 'バッグ・小物・ブランド雑貨' },
@@ -180,6 +241,16 @@ export class MenuComponent {
     { value: "101381", viewValue: 'カタログギフト・チケット' },
     { value: "100000", viewValue: '百貨店・総合通販・ギフト' }
   ];
+
+
+  ngAfterViewInit() {
+    // if (this.syokaiFlg) {
+    //   this.getSyokaiLoad();
+    //   this.syokaiFlg = false;
+    // }
+
+  }
+
 }
 
 

@@ -27,8 +27,6 @@ export class AppComponent implements OnInit {
 
   }
   title = 'MyApp';
-  showFiller = false;
-
 }
 
 

@@ -12,6 +12,8 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Meta } from '@angular/platform-browser';
+
 
 
 interface Food {
@@ -30,17 +32,22 @@ interface Food {
 
 export class DashboardComponent implements AfterViewInit {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private meta: Meta) {
     for (let i: number = 0; i < 30; i++) {
       this.itemUrlList.push("/");
       this.itemNameList.push("商品の説明が表示されます。最初の写真は柴犬です。");
       this.imageUrlList.push("https://material.angular.io/assets/img/examples/shiba2.jpg");
       this.shopNameList.push("サブタイトルが表示されます");
     }
+
+    //メタ情報を追加
+    this.meta.addTag({
+      name: 'description',
+      content: 'Angular(17.0)の概要と環境構築の手順を解説します。2024年/2月に更新しています。環境はwindows10,angular17.0です。'
+    })
   }
 
   GET_USERS_API: any;
-
   modalflg: boolean = false;
   itemUrlList: any[] = [];
   itemNameList: any[] = [];
@@ -144,61 +151,6 @@ export class DashboardComponent implements AfterViewInit {
     );
   }
 
-  /**
- * ユーザリスト取得関数
- */
-  getSyokaiLoad(): void {
-    if (this.syokaiFlg) {
-      this.GET_USERS_API = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601";
-      const hash = {
-        applicationId: "1061100863725172366",
-        affiliateId: "30bf3760.a2dfbb1f.30bf3761.e6ea1a7d"
-      };
-      const paramsOptions = <HttpParamsOptions>{ fromObject: hash };
-      const params = new HttpParams(paramsOptions);
-      // HTTP通信
-      this.http.get(this.GET_USERS_API, { params: params }).subscribe(
-        // 通信成功　200~299の処理
-        (response) => {
-          let res = JSON.stringify(response);
-          let parseRes = JSON.parse(res);
-          //画面呼び出し時にデータを入れているので初期化する。
-          this.itemUrlList = [];
-          this.itemNameList = [];
-          this.imageUrlList = [];
-          this.itemPriceList = [];
-          this.shopNameList = [];
-
-          // 取得した商品情報群をループ
-          for (let i: number = 0; i < 30; i++) {
-            // カードへ設定する配列を設定
-            let itemUrl = parseRes.Items[i].Item.affiliateUrl;
-            this.itemUrlList.push(itemUrl);
-            let itemPrice = parseRes.Items[i].Item.itemPrice;
-            this.itemPriceList.push(itemPrice + "円");
-            let imageUrl = parseRes.Items[i].Item.mediumImageUrls[0].imageUrl;
-            if (imageUrl.indexOf('_ex=128x128')) {
-              imageUrl = imageUrl.replace("_ex=128x128", "_ex=256x256");
-            } else {
-              imageUrl = imageUrl + "?_ex=256x256";
-            }
-            this.imageUrlList.push(imageUrl);
-            let itemName = parseRes.Items[i].Item.itemName;
-            this.itemNameList.push(itemName);
-            let shopName = parseRes.Items[i].Item.shopName;
-            this.shopNameList.push("shopName : " + shopName);
-
-            this.closeModal();
-          }
-        },
-        // 通信失敗時の処理
-        (error) => {
-          console.error(error);
-          this.closeModal();
-        }
-      );
-    }
-  }
 
   foods: Food[] = [
     { value: "", viewValue: '総合ランキング' },

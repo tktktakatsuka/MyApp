@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Meta } from '@angular/platform-browser';
 
 
 interface Food {
@@ -30,13 +31,20 @@ interface Food {
 
 export class MenuComponent implements AfterViewInit {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private meta: Meta) {
     for (let i: number = 0; i < 30; i++) {
       this.itemUrlList.push("/");
       this.itemNameList.push("商品の説明が表示されます。最初の写真は柴犬です。");
       this.imageUrlList.push("https://material.angular.io/assets/img/examples/shiba2.jpg");
       this.shopNameList.push("サブタイトルが表示されます");
     }
+
+    // ［2］メタ情報を追加
+    this.meta.addTag({
+      name: 'description',
+      content: 'Angular(17.0)を使って楽天APIと連携し、商品ランキングを取得する画面を実装しました。ジャンルを選択し、検索ボタンを押下することで、ジャンル毎のランキングを取得することができます。'
+    })
+
   }
 
   GET_USERS_API: any;

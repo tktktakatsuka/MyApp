@@ -1,0 +1,12 @@
+ul {
+    margin-bottom: 20px;
+}
+
+code {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hello{
+background-image: url('./media/AngularHello.png');
+}

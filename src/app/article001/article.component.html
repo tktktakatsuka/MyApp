@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="article">
+        <div class="row">
+            <!--メインコンテンツ　ここから-->
+            <div class="col-xs-12 col-md-8 ">
+                <div class="card h-0 mb-3 mr-3">
+                    <div class="card-body">
+                        <div class="">
+                            <hr>
+                            <h1 id="djangoの導入からサーバー起動までtags-djangoauthor-south_slide-false">
+                                <p>Djangoの導入からサーバー起動まで</p>
+                            </h1>
+
+                            <br>
+                            <h2 id="djangoとは">
+                                <p>Djangoとは</p>
+                            </h2>
+                            <p>Pythonで実装されたWebアプリケーションフレームワーク。
+                                簡単に複雑なデータベース主体の Web サイトを構築できる。</p>
+                            <h2 id="環境">環境</h2>
+                            <ul>
+                                <li>CentOS</li>
+                                <li>Python 3.5.2</li>
+                                <li>Django 1.10</li>
+                            </ul>
+                            <h2 id="djangoをインストール">Djangoをインストール</h2>
+                            <p>Pythonのパッケージ管理システムであるpipを用いて導入する。
+                                Python 3.4以降のバージョンにはデフォルトでインストールされているが
+                                未インストールの場合はインスコしてください。</p>
+                            <p>pipでDjangoをインストールする。</p>
+                            <p><code>$ pip install django==1.10</code></p>
+
+                            <p><code>$ pip list</code></p>
+                            <p>でDjangoが表示されていればインストール完了。</p>
+                            <h2 id="djangoを動かしてみる">Djangoを動かしてみる</h2>
+                            <h3 id="プロジェクトの作成">プロジェクトの作成</h3>
+                            <p>まずはプロジェクトを作成する。</p>
+                            <p><code>$ django-admin startproject testProject</code> </p>
+
+                            <p>コマンドを実行したディレクトリに、testProject というディレクトリができる。</p>
+                            <h3 id="サーバーを起動する">サーバーを起動する</h3>
+                            <p>testProjectディレクトリに移動する。
+                                <code>$ cd testProject</code>
+                            </p>
+                            <p>サーバーを起動する。
+                                引数に、ipアドレスとポート番号を指定する。
+                                引数を指定しない場合、127.0.0.1の8000番が指定される。</p>
+                            <div class="highlight">
+                                <pre><code>Performing system checks...
+System check identified no issues (0 silenced).
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin,
+ auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+April 01, 2017 - 12:43:16
+Django version 1.10, using settings 'firstDjango.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+                        </code></pre>
+                            </div>
+                            <p>デフォルトの場合は<code>http://127.0.0.1:8000/</code>
+                                にアクセスし、以下の画面が表示されればサーバーの起動に成功している。</p>
+                            <p><img src="https://qiita-image-store.s3.amazonaws.com/0/151404/ece78c85-1c11-a6bd-4b03-17e077f8ca0a.png"
+                                    alt="djangotest.PNG"></p>
+                            <p>アクセスできない場合は、IPアドレスの設定を確認する。</p>
+                            <p>CTRL + C でサーバーを終了。</p>
+                            <p>サーバー起動時にコマンドラインに表示される
+                                You have 13 unapplied... というmigrationsに関するエラーを消すには
+                                サーバーを終了してから
+                                <code>$ python manage.py migrate</code>
+                                で消すことができる。
+                            </p>
+                            <p>以上、導入からテストサーバーの起動まで。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--メインコンテンツ　ここまで-->
+
+            <!--サブコンテンツ　ここから-->
+            <div class="col-xs-12 col-md-4 ">
+                <!--カード　ここから-->
+                <div class="container mb-5">
+                    <div class="card-deck ">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h1 class="card-title">ダウンタイムまで・・・</h1>
+                                <a href="{% url 'countDown' %}" class="btn btn-primary">ボタンをクリック！</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--カード　ここまで-->
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+.menu {
+  background-color: #ccc;
+
+}
+
+.menu li {
+  padding: 4px 8px;
+  display: inline-block;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('./cart.png');
+  background-size: cover;
+}
+
+
+
+.img-frame{
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+img {
+  margin: 0 auto;
+}
+
+img:hover {
+  /* ヌルッと動くように */
+  transition: 0.3s;
+  /* transformは変形プロパティ。値にscaleを指定すると拡大縮小することができる。 */
+  transform: scale(1.3);
+}
+
+.zyanruform{
+  width: 400px;
+  margin-left:  20px;  
+}
+
+.divZyanruform{
+  display: inline-grid !important;
+  margin:  0 auto !important;  
+}
+
+
+.example-button-row{
+  margin-left:  20px;  
+}
+
+.title{
+  text-align:center;
+  color: rgb(3, 20, 22);
+  font-size: 20px;
+}
+
+
+

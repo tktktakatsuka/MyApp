@@ -1,75 +1,174 @@
 <div class="menu">
-    <div>
-      <button type="button" class="get-information">楽天API発動！</button>
+
+  <br>
+  <strong class="title">
+    <h1>tktkCompanyの技術ブログ(angular中心)</h1>
+  </strong>
+  <br>
+
+  <div class="container">
+    <div class="article">
+      <div class="row">
+        <!--メインコンテンツ　ここから-->
+        <div class="col-xs-12 col-md-8 ">
+          <div class="card h-0 mb-3 mr-3">
+            <div class="card-body">
+              <div class="">
+
+                <!--1レコードここから-->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--ここからカード-->
+                    <mat-card class="example-card" id="example-card" style="margin-left:20px;">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title style="color: crimson;">第１位</mat-card-title>
+                        <mat-card-subtitle>{{shopNameList[0]}}</mat-card-subtitle>
+                      </mat-card-header>
+                      <div class="img-frame">
+                        <a href="/article001"><img mat-card-image src={{imageUrlList[0]}}
+                            alt="Photo of a Shiba Inu"></a>
+                      </div>
+                      <mat-card-content>
+                        <div class="itemName">
+                          <p>Djangoの導入からサーバー起動までの手順</p>
+                        </div>
+                      </mat-card-content>
+                      <mat-card-actions>
+                      </mat-card-actions>
+                    </mat-card>
+                    <!--ここまでカード-->
+                    <br>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <!--ここからカード-->
+                    <mat-card class="example-card" id="example-card" style="margin-left:20px;">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title style="color: crimson;">第４位</mat-card-title>
+                        <mat-card-subtitle>{{shopNameList[3]}}</mat-card-subtitle>
+                      </mat-card-header>
+                      <div class="img-frame">
+                        <a href={{itemUrlList[3]}}><img mat-card-image src={{imageUrlList[3]}}
+                            alt="Photo of a Shiba Inu"></a>
+                      </div>
+                      <mat-card-content>
+                        <div class="itemName">
+                          <p>{{itemNameList[3]}}</p>
+                        </div>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <a href={{itemUrlList[3]}}><button mat-button>商品を購入する</button></a>
+                        <div class="itemPrice" style="color: crimson;">
+                          <strong>
+                            <p>{{itemPriceList[3]}}</p>
+                          </strong>
+                        </div>
+
+                      </mat-card-actions>
+                    </mat-card>
+                    <!--ここまでカード-->
+                    <br>
+                  </div>
+                  <ul></ul>
+                </div>
+                <!--1レコードここまで-->
+
+
+                <!--1レコードここから-->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!--ここからカード-->
+                    <mat-card class="example-card" id="example-card" style="margin-left:20px;">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title style="color: crimson;">第５位</mat-card-title>
+                        <mat-card-subtitle>{{shopNameList[4]}}</mat-card-subtitle>
+                      </mat-card-header>
+
+                      <div class="img-frame">
+                        <a href={{itemUrlList[4]}}><img mat-card-image src={{imageUrlList[4]}}
+                            alt="Photo of a Shiba Inu"></a>
+                      </div>
+
+                      <mat-card-content>
+                        <div class="itemName">
+                          <p>{{itemNameList[4]}}</p>
+                        </div>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <a href={{itemUrlList[4]}}><button mat-button>商品を購入する</button></a>
+                        <div class="itemPrice" style="color: crimson;">
+                          <strong>
+                            <p>{{itemPriceList[4]}}</p>
+                          </strong>
+                        </div>
+
+                      </mat-card-actions>
+                    </mat-card>
+                    <!--ここまでカード-->
+                    <br>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <!--ここからカード-->
+                    <mat-card class="example-card" id="example-card" style="margin-left:20px;">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title style="color: crimson;">第６位</mat-card-title>
+                        <mat-card-subtitle>{{shopNameList[5]}}</mat-card-subtitle>
+                      </mat-card-header>
+                      <div class="img-frame">
+
+                        <a href={{itemUrlList[5]}}><img mat-card-image src={{imageUrlList[5]}}
+                            alt="Photo of a Shiba Inu"></a>
+                      </div>
+                      <mat-card-content>
+                        <div class="itemName">
+                          <p>{{itemNameList[5]}}</p>
+                        </div>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <a href={{itemUrlList[5]}}><button mat-button>商品を購入する</button></a>
+                        <div class="itemPrice" style="color: crimson;">
+                          <strong>
+                            <p>{{itemPriceList[5]}}</p>
+                          </strong>
+                        </div>
+
+                      </mat-card-actions>
+                    </mat-card>
+                    <!--ここまでカード-->
+                    <br>
+                  </div>
+                </div>
+                <!--1レコードここまで-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--メインコンテンツ　ここまで-->
+
+        <!--サブコンテンツ　ここから-->
+        <div class="col-xs-12 col-md-4 ">
+          <!--カード　ここから-->
+          <div class="container mb-5">
+            <div class="card-deck ">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h1 class="card-title">ダウンタイムまで・・・</h1>
+                  <a href="{% url 'countDown' %}" class="btn btn-primary">ボタンをクリック！</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--カード　ここまで-->
+
+        </div>
+      </div>
     </div>
-  
-    <!--1レコードここから-->
-    <div class="row">
-      <div class="col-sm-3">
-        <!--ここからカード-->
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>楽天商品ランキング</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <div class="itemName"><p></p></div>
-          </mat-card-content>
-          <mat-card-actions>
-            <a href="/menu"><button mat-button>楽天商品検索はここをクリック</button></a>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-        <!--ここまでカード-->
-        <br>
-      </div>
-  
-      <div class="col-sm-3">
-        <!--ここからカード-->
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>楽天本ランキング</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <div class="itemName"><p></p></div>
-          </mat-card-content>
-          <mat-card-actions>
-            <a href=""><button mat-button>楽天本検索はここをクリック</button></a>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-        <!--ここまでカード-->
-        <br>
-      </div>
-  
-      <div class="col-sm-3">
-        <!--ここからカード-->
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>楽天レシピランキング</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <div class="itemName"><p></p></div>
-          </mat-card-content>
-          <mat-card-actions>
-            <a href="/recipe"><button mat-button>楽天レシピ検索はここをクリック</button></a>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-        <!--ここまでカード-->
-        <br>
-      </div>
-  
-    </div>
-    <!--1レコードここまで-->
-  
-  
   </div>
+
+
+</div>

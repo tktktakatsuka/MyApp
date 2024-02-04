@@ -50,12 +50,6 @@ export class RecipeComponent implements AfterViewInit {
     this.geneId = event.value;
   }
 
-
-
-  
-
-
-
   /**
    * ユーザリスト取得関数
    */

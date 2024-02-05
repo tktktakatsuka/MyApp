@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
@@ -17,5 +18,6 @@ export class article001Component {
         content: 'Angular(17.0)の概要と環境構築の手順を開設します。2024年/2月に更新しています。環境はwindows10,angular17.0です。'
       })
     }
-
+    
+    
 }

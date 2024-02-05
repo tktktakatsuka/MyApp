@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { IgxCardModule } from 'igniteui-angular';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   imports: [CommonModule, RouterOutlet, MenuComponent, DashboardComponent,
-    MatSlideToggleModule, MatIconModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, IgxCardModule, MatSidenavModule, MatButtonModule]
+    MatSlideToggleModule, MatIconModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, IgxCardModule, MatSidenavModule, MatButtonModule,MatCardModule]
 
 })
 export class AppComponent implements OnInit {

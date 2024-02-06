@@ -15,7 +15,7 @@ export class article002Component {
       // ［2］メタ情報を追加
       this.meta.addTag({
         name: 'description',
-        content: 'Angular(17.0)の概要と環境構築の手順を開設します。2024年/2月に更新しています。環境はwindows10,angular17.0です。'
+        content: 'AngularMaterial(17.0)の概要と環境構築の手順を解説します。2024年/2月に更新しています。環境はwindows10,angular17.0です。'
       })
     }
 

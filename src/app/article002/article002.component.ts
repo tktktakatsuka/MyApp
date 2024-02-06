@@ -6,10 +6,10 @@ import {MatCardModule} from '@angular/material/card';
   selector: 'app-home',
   standalone: true,
   imports: [MatCardModule],
-  templateUrl: './article.component.html',
-  styleUrl: './article.component.css'
+  templateUrl: './article002.component.html',
+  styleUrl: './article002.component.css'
 })
-export class article001Component {
+export class article002Component {
     // ［1］Metaサービスを注入
     constructor(private meta: Meta) {
       // ［2］メタ情報を追加

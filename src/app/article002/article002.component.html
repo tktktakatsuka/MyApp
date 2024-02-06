@@ -1,0 +1,126 @@
+<div class="menu">
+    <div class="">
+        <div class="article">
+            <div class="row">
+                <!--メインコンテンツ　ここから-->
+                <div class="col-xs-12 col-md-8 ">
+                    <div class="card h-0 mb-3 mr-3">
+                        <div class="card-body">
+                            <div class="">
+
+                                <h1 id="mainTitle">
+                                    <p>AngularMaterialの導入から動作確認まで(2024年2月作成)</p>
+                                </h1>
+
+                                <br>
+                                <h2 id="">
+                                    <p>AngularMaterialとは</p>
+                                </h2>
+                                <p>Angular Materialとは,簡単にHTML上で利用できるUIコンポーネントを提供してくれるライブラリです。
+                                    ターミナルからngコマンドを実施することで、簡単にWeb サイトのデザインを開発することができます。</p>
+
+                                <h2 id="環境">環境</h2>
+                                <ul>
+                                    <li>・Windows 10</li>
+                                    <li>・Angular 17.0</li>
+                                    <li>・VScode</li>
+                                </ul>
+
+                                <h2 id="">AngularMaterialをインストール</h2>
+                                <p>AngularMaterialをインストールするために、以下のコマンドを実行します。
+                                <p><code [innerHTML]>$ ng add -g &#064;angular/material</code></p>
+                                <p>私が実際に実行したときの画面を記載します。</p>
+                                <p class=AngularHello><img src="/assets/images/002_1.png" alt="Angulartest.PNG">
+                                </p>
+                                <p><code [innerHTML]>$ npm list</code>でangular/materialが表示されればインストール完了です。</p>
+                                <p>実際に実行したときの画面。</p>
+
+                                <p><code [innerHTML]>$ npm list</code></p>
+                                <p class=AngularHello><img src="/assets/images/002_2.png" alt="Angulartest.PNG">
+
+
+
+
+                                <h2 id="">コンポーネントを表示する</h2>
+                                <p>今回はクリックすることで色が変わるトグルを作成しようと思います。</p>
+                                <p>完成イメージは以下です。</p>
+                                <p>■ボタン押下前</p>
+                                <p class=><img src="/assets/images/002_3.png" alt="Angulartest.PNG">
+                                <p>■ボタン押下後</p>
+                                <p class=><img src="/assets/images/002_4.png" alt="Angulartest.PNG">
+                                <p>このコンポーネントを作成していきます。</p>
+
+
+                                <h3 id="プロジェクトの作成">ファイルの編集（TypeScript）</h3>
+                                <p>前提条件として、プロジェクトを作成している必要があります。</p>
+                                <p>今回はプロジェクトの作成方法は割愛しますが、
+                                    まだ未作成の人は以下のリンクから適宜作成をお願いします。</p>
+                                    <a href="/article001">Angularの導入から動作確認までの手順</a>
+                                
+
+
+                                <p>サーバーを起動します。
+                                    http://localhost:4200でブラウザからアクセスします。</p>
+                                <div class="highlight">
+                                    <pre><code>C:\work\sample>cd my-app
+C:\work\sample\my-app>
+C:\work\sample\my-app>ng serve
+
+Initial Chunk Files | Names         |  Raw Size
+polyfills.js        | polyfills     |  83.46 kB |
+main.js             | main          |  22.09 kB |
+styles.css          | styles        |  95 bytes |
+
+                    | Initial Total | 105.64 kB
+
+Application bundle generation complete. [3.494 seconds]
+Watch mode enabled. Watching for file changes...
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+                        </code></pre>
+                                </div>
+                                <p>デフォルトの場合は<code>http://localhost:4200</code>
+                                    にアクセスし、以下の画面が表示されればサーバーの起動に成功している。</p>
+                                <p class=AngularHello><img src="/assets/images/AngularHello.png" alt="Angulartest.PNG">
+                                </p>
+
+                                <p>CTRL + C でサーバーを終了します。</p>
+
+                                <p>ここまでが導入からテストサーバーの起動までの解説となります。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--メインコンテンツ　ここまで-->
+
+                <!--サブコンテンツ　ここから-->
+                <div class="col-xs-12 col-md-4 ">
+                    <!--カード　ここから-->
+                    <div class="container mb-6">
+                        <div class="card-deck ">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <mat-card class="example-card">
+                                        <mat-card-header>
+                                            <mat-card-title-group>
+                                                <mat-card-title>tktkCompany</mat-card-title>
+                                                <mat-card-subtitle></mat-card-subtitle>
+                                                <img mat-card-sm-image
+                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                                            </mat-card-title-group>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <p>現役SEしています。Angularを現場で使うことになり、自身の理解力向上の為情報発信を始めました。</p>
+                                            このサイトもAngular17で作成されています。<br>
+                                            ラーメンが好き。
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--カード　ここまで-->
+                </div>
+            </div>
+        </div>
+    </div>

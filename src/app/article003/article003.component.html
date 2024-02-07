@@ -1,0 +1,118 @@
+<div class="menu">
+    <div class="">
+        <div class="article">
+            <div class="row">
+                <!--メインコンテンツ　ここから-->
+                <div class="col-xs-12 col-md-8 ">
+                    <div class="card h-0 mb-3 mr-3">
+                        <div class="card-body">
+                            <div class="">
+
+                                <h1 id="mainTitle">
+                                    <p>Angular ページを増やす方法（コンポーネントの追加）</p>
+                                </h1>
+
+                                <br>
+                                <h2 id="">
+                                    <p>Angularのページを増やす方法</p>
+                                </h2>
+                                <p>Angularでページを増やす方法として、コンポーネント（HTML、CSS、TypeScript）を追加することで実装することができます。
+                                    コンポーネントはコマンドから簡単に増やすことができます。今回はその手順をまとめていきます。</p>
+                                <h2 id="環境">環境</h2>
+                                <ul>
+                                    <li>・Windows 10</li>
+                                    <li>・Angular 17.0</li>
+                                    <li>・VScode</li>
+                                </ul>
+
+                                <h2 id="">コンポーネントの作成手順</h2>
+                                <p>プロジェクトのディレクトリに移動し、次のコマンドを実行してください。</p>
+                                <p><code [innerHTML]>ng generate component home </code></p>
+                                <p>実際に実行したときの画面です。</p>
+                                <p class=AngularHello><img src="/assets/images/003_001.png" alt="component追加" alt="Angulartest.PNG">
+
+
+                                <h2 id="">app.routes.tsファイルの内容を下記と同じにする。</h2>
+                                <p>
+                                <pre><code [innerHTML]>{{routeText}}</code></pre>
+                                <br>
+
+
+                                <p>サーバーを起動します。
+                                    http://localhost:4200でブラウザからアクセスします。</p>
+                                <div class="highlight">
+                                    <pre><code>C:\work\sample>cd my-app
+C:\work\sample\my-app>
+C:\work\sample\my-app>ng serve
+
+Initial Chunk Files | Names         |  Raw Size
+polyfills.js        | polyfills     |  83.46 kB |
+main.js             | main          |  22.09 kB |
+styles.css          | styles        |  95 bytes |
+
+                    | Initial Total | 105.64 kB
+
+Application bundle generation complete. [3.494 seconds]
+Watch mode enabled. Watching for file changes...
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+                        </code></pre>
+                                </div>
+                                <p>デフォルトの場合は<code>http://localhost:4200</code>
+                                    にアクセスし、以下の画面が表示されればサーバーの起動に成功しています。</p>
+                                <p class=AngularHello><img src="/assets/images/003_002.png" alt="component追加">
+                                </p>
+                                <p><code>http://localhost:4200/home</code>へアクセスしてみると</p>
+                                <p>home works!（home.component.htmlに記述されている。）</p>
+                                <p>という文字が追加されていることがわかります。</p>
+                                <p>小さくて申し訳ないのですが、左下に表示されています。</p>
+
+                                <p>※/homeの部分は、【app.route.ts】ファイルで設定した【path】と同じ値となります。</p>
+                                <p>/homeというパスへアクセスし、ng generateで生成したHomeComponentが表示されるという動きになります。</p>
+                                <p>コンポーネントが表示される場所は、【app.component.ts】の</p>
+                                <code>{{outlet}}</code>部分に該当します。
+
+
+                                <p>確認出来たらCTRL + C でサーバーを終了します。</p>
+
+                                <p>以上がAngular(17.0)でコンポーネントを追加する手順となります。</p>
+                                <p>【path】の設定を増やしていくことで、ページを追加していくことが可能となりました。</p>
+                                <p>ここまで読んでくださりありがとうございました。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--メインコンテンツ　ここまで-->
+
+                <!--サブコンテンツ　ここから-->
+                <div class="col-xs-12 col-md-4 ">
+                    <!--カード　ここから-->
+                    <div class="container mb-6">
+                        <div class="card-deck ">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <mat-card class="example-card">
+                                        <mat-card-header>
+                                            <mat-card-title-group>
+                                                <mat-card-title>tktkCompany</mat-card-title>
+                                                <mat-card-subtitle></mat-card-subtitle>
+                                                <img mat-card-sm-image
+                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                                            </mat-card-title-group>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <p>現役SEしています。Angularを現場で使うことになり、自身の理解力向上の為情報発信を始めました。</p>
+                                            このサイトもAngular17で作成されています。<br>
+                                            ラーメンが好き。
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--カード　ここまで-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

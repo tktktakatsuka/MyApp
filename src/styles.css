@@ -9,15 +9,6 @@
   margin-top: 30px;
 }
 
-.highlight {
-  background-color :rgba(132, 48, 48, 0.08);
-  margin-bottom: 20px;
-}
-
-pre code{
-  background-color :rgba(132, 48, 48, 0.08);
-}
-
 
 h1 {
   font-size: 1.4em;
@@ -56,3 +47,20 @@ body {
   font-family: Roboto, Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", メイリオ, Meiryo, sans-serif;
   font-size: 20px;
 }
+
+
+/* ソースコードのスタイル */
+code {
+  background-color: #444;
+  color: #17ff0b!important;
+}
+
+pre {
+  background-color: #444;
+}
+
+
+ul {
+  margin-bottom: 20px;
+}
+

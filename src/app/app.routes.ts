@@ -11,7 +11,6 @@ import { article003Component } from './article003/article003.component';
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent }
-    ,{ path: 'dashboard', component: DashboardComponent }
     ,{ path: 'shohin', component: MenuComponent }
     ,{ path: 'recipe', component: RecipeComponent }
     ,{ path: 'article001', component: article001Component }

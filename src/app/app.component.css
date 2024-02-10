@@ -4,14 +4,16 @@
   flex-direction: column;
 }
 
-.fotter {
-  flex: 1;
-
+code {
+  background-color: #444;
+  color: #17ff0b;
 }
 
-mat-sidenav-content {
-  height: 100vh;
+pre {
+  background-color: #444;
 }
+
+
 
 mat-sidenav {
   background-color: #3f51b5;
@@ -41,12 +43,4 @@ a.list-group-item {
 
 a.list-group-item-action:hover {
   background-color: #076b7a;
-}
-
-.hello {
-  background-image: url(../assets/images/angular.png);
-}
-
-.AngularHello {
-  background-image: url(../assets/images/AngularHello.png);
 }

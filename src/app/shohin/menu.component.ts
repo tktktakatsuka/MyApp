@@ -246,8 +246,7 @@ export class MenuComponent implements AfterViewInit {
     { value: "100005", viewValue: '花・ガーデン・DIY' },
     { value: "101438", viewValue: 'サービス・リフォーム' },
     { value: "111427", viewValue: '住宅・不動産' },
-    { value: "101381", viewValue: 'カタログギフト・チケット' },
-    { value: "100000", viewValue: '百貨店・総合通販・ギフト' }
+    { value: "101381", viewValue: 'カタログギフト・チケット' }
   ];
 
 

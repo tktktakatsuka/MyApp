@@ -7,7 +7,7 @@
                     <div class="card h-0 mb-3 mr-3">
                         <div class="card-body">
                             <div class="">
-                                
+
                                 <h1 id="mainTitle">
                                     <p>Angularの導入からサーバー起動まで(2024年2月作成)</p>
                                 </h1>
@@ -53,7 +53,13 @@ PS C:\angularStudy\MyApp> </code></pre>
 
 
                                 <h2 id="">npmでAngularをインストールする。</h2>
-                                <p><code [innerHTML]>$ npm install -g &#064;angular/cli</code></p>
+                                
+                                <p ><code id='npmAngular' [innerHTML]>$ npm install -g &#064;angular/cli</code></p>
+
+                                <button  (click)="exeClipbordCopy('npmAngular')" ><i class="fas fa-copy"></i>
+                                    コピーする
+                                </button>
+
 
                                 <p><code>$ ng version</code></p>
                                 <p>でAngularが表示されていればインストール完了です。</p>
@@ -114,7 +120,7 @@ Watch mode enabled. Watching for file changes...
                                                 <mat-card-title>tktkCompany</mat-card-title>
                                                 <mat-card-subtitle></mat-card-subtitle>
                                                 <img mat-card-sm-image
-                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="柴犬の画像">
                                             </mat-card-title-group>
                                         </mat-card-header>
                                         <mat-card-content>

@@ -3,8 +3,13 @@ ul {
 }
 
 code {
-    margin-top: 20px;
-    margin-bottom: 20px;
+
+    background-color: #444;
+    color: #17ff0b;
+}
+
+pre {
+    background-color: #444;
 }
 
 .menu {

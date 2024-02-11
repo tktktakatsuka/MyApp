@@ -1,0 +1,170 @@
+<div class="menu">
+    <div class="">
+        <div class="article">
+            <div class="row">
+                <!--メインコンテンツ　ここから-->
+                <div class="col-xs-12 col-md-8 ">
+                    <div class="card h-0 mb-3 mr-3">
+                        <div class="card-body">
+                            <div class="">
+
+                                <h1 id="mainTitle">
+                                    <p>Angular(17.0)スピナーを実装する手順</p>
+                                </h1>
+
+                                <br>
+                                <h2 id="">
+                                    <p>Angular(17.0)スピナーを実装する手順</p>
+                                </h2>
+                                <p>Angular(17.0)スピナーを実装する手順として、AngularMaterialの公式ページからコピーペーストすることで
+                                    簡単に実装することができます。今回はその手順をまとめていきます。</p>
+                                <p>※AngularMaterialを実装する際にはnpmへAngularCliとAngularMaterialをインストールする必要があります。</p>
+                                <p>まだnpmへインストールできていない方は以下手順を実施し、適宜インストールをお願いします。</p>
+                                <ul>
+                                    <li><a href="/article001">・Angularを環境構築する方法</a></li>
+                                    <li><a href="/article002">・AngularMaterialを環境構築する方法</a></li>
+                                </ul>
+
+                                <h2 id="環境">環境</h2>
+                                <ul>
+                                    <li>・Windows 10</li>
+                                    <li>・Angular 17.0</li>
+                                    <li>・VScode</li>
+                                </ul>
+
+                                <h2 id="">
+                                    <p>今回の目標</p>
+                                </h2>
+                                <p>以下のようなスピナー（ロード中などで使うパーツ）がサーバを立ち上げた時に表示されることです。</p>
+                                <mat-spinner></mat-spinner>
+
+                                <h2 id="">コンポーネントの作成します。</h2>
+                                <p>プロジェクトのディレクトリに移動し、<code>ng generate component spinner</code>を実行してください。</p>
+                                <p>実際に実行したときの画面。</p>
+                                <pre><code [innerHTML]>PS C:\work\sample\my-app> ng generate component spinner
+CREATE src/app/spinner/spinner.component.html (23 bytes)
+CREATE src/app/spinner/spinner.component.spec.ts (626 bytes)
+CREATE src/app/spinner/spinner.component.ts (250 bytes)     
+CREATE src/app/spinner/spinner.component.css (0 bytes)      
+PS C:\work\sample\my-app> </code></pre>
+                                <br>
+                                <p class=AngularHello><img src="/assets/images/004_001.png" alt="component追加">
+                                    VSCodeの画面でspinnerのCSS,HTML,TypeScriptのファイルが作成されていればOKです。
+                                </p>
+
+                                <h2 id="">spinner.component.tsファイルの内容を編集する。</h2>
+                                <p>spinner.component.tsの内容を以下のように編集してください。
+                                    内容としては【MatProgressSpinnerModule】のインポート宣言の追加（2行を追加）をしています。
+                                </p>
+                                <br>
+                                <p>
+                                <pre><code [innerHTML]>{{spinnerTsText}}</code></pre>
+                                <br>
+
+                                <h2 id="">spinner.component.htmlファイルの内容を編集する。</h2>
+                                <p>spinner.component.htmlの内容を以下のように編集してください。</p>
+                                <p>内容としては、スピナーのタグを追加をしています（2行目）。</p>
+
+                                <br>
+                                <p>
+                                <pre><code [innerHTML]>{{spinnerHtmlText}}</code></pre>
+                                <br>
+
+
+                                <h2 id="">app.component.tsファイルの内容を編集する。</h2>
+                                <p>spinner.component.htmlの内容を以下のように編集してください。
+                                    内容としては、スピナーのインポート宣言の追加をしています。
+                                </p>
+                                <br>
+                                <p>
+                                <pre><code [innerHTML]>{{appComponentText}}</code></pre>
+                                <br>
+
+                                <h2 id="">app.component.htmlファイルの内容を編集する。</h2>
+                                <p>spinner.component.htmlの内容を以下のように編集してください。
+                                    内容としては、スピナーのタグを追加をしています。
+                                </p>
+                                <br>
+                                <p>
+                                <pre><code [innerHTML]>{{htmltStr}}</code></pre>
+                                <br>
+
+
+
+                                <p>サーバーを起動します。
+                                    http://localhost:4200でブラウザからアクセスします。</p>
+                                <div class="highlight">
+                                    <pre><code>C:\work\sample>cd my-app
+C:\work\sample\my-app>
+C:\work\sample\my-app>ng serve
+
+Initial Chunk Files | Names         |  Raw Size
+polyfills.js        | polyfills     |  83.46 kB |
+main.js             | main          |  22.09 kB |
+styles.css          | styles        |  95 bytes |
+
+                    | Initial Total | 105.64 kB
+
+Application bundle generation complete. [3.494 seconds]
+Watch mode enabled. Watching for file changes...
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+                        </code></pre>
+
+                                </div>
+                                <br>
+                                <p>デフォルトの場合は<code>http://localhost:4200</code>
+                                    にアクセスし、以下の画面が表示されればサーバーの起動に成功しています。</p>
+                                <p class=AngularHello><img src="/assets/images/004_002.png" alt="component追加">
+
+                                <p>確認出来たらCTRL + C でサーバーを終了します。</p>
+                                <p>以上がAngular(17.0)でスピナーを追加する手順となります。</p>
+                                <p>時間のかかる処理が入る際に、読み込み中をユーザにお知らせる為に実装してみると良いと思います。</p>
+                                <p>ここまで読んでくださりありがとうございました。</p>
+
+                                <h2 id="">
+                                    <p>参考資料</p>
+                                </h2>
+                                <a
+                                    href="https://material.angular.io/components/progress-spinner/overview">AngularMaterialの公式サイト</a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--メインコンテンツ　ここまで-->
+
+                <!--サブコンテンツ　ここから-->
+                <div class="col-xs-12 col-md-4 ">
+                    <!--カード　ここから-->
+                    <div class="container mb-6">
+                        <div class="card-deck ">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <mat-card class="example-card">
+                                        <mat-card-header>
+                                            <mat-card-title-group>
+                                                <mat-card-title>tktkCompany</mat-card-title>
+                                                <mat-card-subtitle></mat-card-subtitle>
+                                                <img mat-card-sm-image
+                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                                                    alt="柴犬の画像">
+                                            </mat-card-title-group>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <p>現役SEしています。Angularを現場で使うことになり、自身の理解力向上の為情報発信を始めました。</p>
+                                            このサイトもAngular17で作成されています。<br>
+                                            ラーメンが好き。
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--カード　ここまで-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

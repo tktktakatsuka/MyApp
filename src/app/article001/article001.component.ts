@@ -1,11 +1,12 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component} from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, MatListModule],
   templateUrl: './article001.component.html',
   styleUrl: './article001.component.css'
 })
@@ -19,7 +20,6 @@ export class article001Component {
     })
   }
 
-  
   exeClipbordCopy(idName:any) {
     // data-urlの値を取得
     let copy  = document.getElementById(idName);

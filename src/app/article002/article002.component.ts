@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatListModule} from '@angular/material/list';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, MatListModule],
   templateUrl: './article002.component.html',
   styleUrl: './article002.component.css'
 })

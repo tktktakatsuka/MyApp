@@ -12,10 +12,24 @@
                                     <p>AngularMaterialの導入から動作確認まで(2024年2月作成)</p>
                                 </h1>
 
+                                <h4 id="目次">
+                                    <p><strong>目次</strong></p>
+                                </h4>
+                                <mat-list>
+                                    <mat-list-item><a
+                                            href="/article002#AngularMaterialとは">AngularMaterialとは</a></mat-list-item>
+                                    <mat-list-item><a href="/article002#環境">環境</a></mat-list-item>
+                                    <mat-list-item><a href="/article002#この記事の目標">この記事の目標</a></mat-list-item>
+                                    <mat-list-item><a
+                                            href="/article002#AngularMaterialをインストール">AngularMaterialをインストール</a></mat-list-item>
+                                    <mat-list-item><a
+                                            href="/article002#ファイルの編集（TypeScript）">ファイルの編集（TypeScript）</a></mat-list-item>
+                                    <mat-list-item><a href="/article002#ファイルの編集（HTML）">ファイルの編集（HTML）</a></mat-list-item>
+                                    <mat-list-item><a href="/article002#サーバを起動">サーバを起動</a></mat-list-item>
+                                </mat-list>
+
                                 <br>
-                                <h2 id="">
-                                    <p>AngularMaterialとは</p>
-                                </h2>
+                                <h2 id="AngularMaterialとは">AngularMaterialとは</h2>
                                 <p>Angular Materialとは,簡単にHTML上で利用できるUIコンポーネントを提供してくれるライブラリです。
                                     ターミナルからngコマンドを実施することで、簡単にWeb サイトのデザインを開発することができます。</p>
 
@@ -26,32 +40,28 @@
                                     <li>・VScode</li>
                                 </ul>
 
-                                <h2 id="">AngularMaterialをインストール</h2>
-                                <p>AngularMaterialをインストールするために、以下のコマンドを実行します。
-                                <p><code [innerHTML]>$ ng add -g &#064;angular/material</code></p>
-                                <p>私が実際に実行したときの画面を記載します。</p>
-                                <p class=AngularHello><img src="/assets/images/002_1.png" alt="Angulartest.PNG">
-                                </p>
-                                <p><code [innerHTML]>$ npm list</code>でangular/materialが表示されればインストール完了です。</p>
-                                <p>実際に実行したときの画面。</p>
-
-                                <p><code [innerHTML]>$ npm list</code></p>
-                                <p class=AngularHello><img src="/assets/images/002_2.png" alt="Angulartest.PNG">
-
-
-
-
-                                <h2 id="">コンポーネントを表示する</h2>
-                                <p>今回はクリックすることで色が変わるトグルを作成しようと思います。</p>
-                                <p>完成イメージは以下です。</p>
+                                
+                                <h2 id="この記事の目標">この記事の目標</h2>
+                                <p>今回はUIコンポーネントを提供するAngularMaterialを利用し、
+                                    クリックすることで色が変わるトグルを作成しようと思います。完成イメージは以下です。</p>
                                 <p>■ボタン押下前</p>
                                 <p class=><img src="/assets/images/002_3.png" alt="Angulartest.PNG">
                                 <p>■ボタン押下後</p>
                                 <p class=><img src="/assets/images/002_4.png" alt="Angulartest.PNG">
-                                <p>このコンポーネントを作成していきます。</p>
+
+                                <h2 id="AngularMaterialをインストール">AngularMaterialをインストール</h2>
+                                <p>AngularMaterialをインストールするために、以下のコマンドを実行します。
+                                <p><code [innerHTML]>$ ng add -g &#064;angular/material</code></p>
+                                <p>私が実際に実行したときの画面を記載します。</p>
+                                <img src="/assets/images/002_1.png" alt="Angulartest.PNG">
+                                <p><code [innerHTML]>$ npm list</code>でangular/materialが表示されればインストール完了です。</p>
+                                <p>実際に実行したときの画面。</p>
+
+                                <p><code [innerHTML]>$ npm list</code></p>
+                                <img src="/assets/images/002_2.png" alt="Angulartest.PNG">
 
 
-                                <h3 id="プロジェクトの作成">ファイルの編集（TypeScript）</h3>
+                                <h2 id="ファイルの編集（TypeScript）">ファイルの編集（TypeScript）</h2>
                                 <p>前提条件として、プロジェクトを作成している必要があります。</p>
                                 <p>今回はプロジェクトの作成方法は割愛しますが、
                                     まだ未作成の人は以下のリンクから適宜作成をお願いします。</p>
@@ -62,15 +72,15 @@
                                     <pre><code>{{typeScriptStr}}</code></pre>
                                 </div>
 
-                                <h3 id="プロジェクトの作成">ファイルの編集（HTML）</h3>
+                                <h2 id="ファイルの編集（HTML）">ファイルの編集（HTML）</h2>
                                 <p>TTypeScriptの記述が完了したら、HTMLファイルを編集します。</p>
                                 <div class="highlight">
                                     <p>app.component.html</p>
                                     <pre><code>{{htmltStr}}</code></pre>
                                 </div>
 
-                                
-                                <h3 id="サーバーを起動する">サーバーを起動します。</h3>
+
+                                <h2 id="サーバを起動">サーバを起動</h2>
                                 <p>my-appディレクトリに移動します。</p>
                                 <p><code>$ cd my-app</code></p>
 
@@ -96,15 +106,15 @@ Watch mode enabled. Watching for file changes...
                                 </div>
                                 <p>デフォルトの場合は<code>http://localhost:4200</code>
                                     にアクセスし、画面にトグルが表示できれば、AngularMaterialの導入は完了です。</p>
-                                    <p>左下に表示されていると思います。</p>
-                                    <p>※うまく表示できない方は右側の赤枠を少し下にずらしてみてください。</p>
+                                <p>左下に表示されていると思います。</p>
+                                <p>※うまく表示できない方は右側の赤枠を少し下にずらしてみてください。</p>
                                 <p class=AngularHello><img src="/assets/images/002_5.png" alt="Angulartest.PNG">
                                 </p>
 
                                 <p>CTRL + C でサーバーを終了します。</p>
 
                                 <p>ここまでAngularMaterialの導入と動作確認までの解説となります。</p>
-                                
+
                                 <p>公式サイトにはほかにもたくさんのコンポーネントが存在しているので、参考にしてみてください。</p>
                                 <a href="https://material.angular.io/">>AngularMaterialの公式サイト</a>
                             </div>
@@ -126,7 +136,8 @@ Watch mode enabled. Watching for file changes...
                                                 <mat-card-title>tktkCompany</mat-card-title>
                                                 <mat-card-subtitle></mat-card-subtitle>
                                                 <img mat-card-sm-image
-                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="柴犬の画像">
+                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                                                    alt="柴犬の画像">
                                             </mat-card-title-group>
                                         </mat-card-header>
                                         <mat-card-content>

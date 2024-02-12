@@ -1,8 +1,29 @@
+h1{
+    padding-top: 15px;
+}
+
 .mat-form-field {
     width: 500px;
 }
 
-.example-button {
-    margin-top: 20px;
-    margin-left: 20px;
+.example-full-width {
+    width: 300px;
+}
+
+input {
+    width: 300px;
+}
+
+.example-form {
+    flex-direction: column;
+    display: flex;
+}
+
+button {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.chat {
+    padding-left: 20px;
 }

@@ -11,10 +11,21 @@
                                 <h1 id="mainTitle">
                                     <p>Angularの導入からサーバー起動まで(2024年2月作成)</p>
                                 </h1>
+                                <h4 id="目次">
+                                    <p><strong>目次</strong></p>
+                                </h4>
+                                <mat-list>
+                                    <mat-list-item><a href="/article001#Angularとは">Angularとは</a></mat-list-item>
+                                    <mat-list-item><a href="/article001#環境">環境</a></mat-list-item>
+                                    <mat-list-item><a href="/article001#Nodeをインストール">Nodeをインストール</a></mat-list-item>
+                                    <mat-list-item><a href="/article001#npmでAngularをインストール">npmでAngularをインストール</a></mat-list-item>
+                                    <mat-list-item><a href="/article001#プロジェクトの作成">プロジェクトの作成</a></mat-list-item>
+                                    <mat-list-item><a href="/article001#サーバの起動と動作確認">サーバの起動と動作確認</a></mat-list-item>
+                                </mat-list>
 
                                 <br>
-                                <h2 id="">
-                                    <p>Angularとは</p>
+                                <h2 id="Angularとは">
+                                    Angularとは
                                 </h2>
                                 <p>TypeScript, CSS, HTML で実装されたWebアプリケーションフレームワーク。
                                     簡単にフロントエンド（web画面）の Web サイトを開発できます。</p>
@@ -46,30 +57,27 @@ Angular: 17.0.8
 PS C:\angularStudy\MyApp> </code></pre>
                                 </div>
 
-                                <h2 id="">Angularをインストール</h2>
-                                <p>Node.jsのパッケージを管理するシステムであるnpmを用いて導入します。
+                                <h2 id="Nodeをインストール">Nodeをインストール</h2>
+                                <p>Angularのインストールは、Node.jsのパッケージを管理するシステムであるnpmを用いて実施します。
                                     ※Nodeのインストール方法については、簡単に可能な為、割愛させていただきます。
                                 </p>
 
 
-                                <h2 id="">npmでAngularをインストールする。</h2>
-                                
-                                <p ><code id='npmAngular' [innerHTML]>$ npm install -g &#064;angular/cli</code></p>
+                                <h2 id="npmでAngularをインストール">npmでAngularをインストール</h2>
 
-                                <button  (click)="exeClipbordCopy('npmAngular')" ><i class="fas fa-copy"></i>
+                                <p><code id='npmAngular' [innerHTML]>$ npm install -g &#064;angular/cli</code></p>
+
+                                <!-- <button (click)="exeClipbordCopy('npmAngular')"><i class="fas fa-copy"></i>
                                     コピーする
-                                </button>
+                                </button> -->
+                                <p><code>$ ng version</code>でAngularが表示されていればインストール完了です。</p>
 
-
-                                <p><code>$ ng version</code></p>
-                                <p>でAngularが表示されていればインストール完了です。</p>
-                                <h2 id="">Angularを動かしてみる</h2>
-                                <h3 id="プロジェクトの作成">プロジェクトの作成</h3>
+                                <h2 id="プロジェクトの作成">プロジェクトの作成</h2>
                                 <p>まずはプロジェクトを作成します。</p>
                                 <p><code>$ ng new my-app</code> </p>
-
                                 <p>コマンドを実行したディレクトリに、my-app というディレクトリができます。</p>
-                                <h3 id="サーバーを起動する">サーバーを起動します。</h3>
+
+                                <h2 id="サーバの起動と動作確認">サーバの起動と動作確認</h2>
                                 <p>my-appディレクトリに移動します。</p>
                                 <p><code>$ cd my-app</code></p>
 
@@ -95,9 +103,7 @@ Watch mode enabled. Watching for file changes...
                                 </div>
                                 <p>デフォルトの場合は<code>http://localhost:4200</code>
                                     にアクセスし、以下の画面が表示されればサーバーの起動に成功している。</p>
-                                <p class=AngularHello><img src="/assets/images/AngularHello.png" alt="Angulartest.PNG">
-                                </p>
-
+                                <img src="/assets/images/AngularHello.png" alt="Angulartest.PNG">
                                 <p>CTRL + C でサーバーを終了します。</p>
 
                                 <p>ここまでが導入からテストサーバーの起動までの解説となります。</p>
@@ -120,7 +126,8 @@ Watch mode enabled. Watching for file changes...
                                                 <mat-card-title>tktkCompany</mat-card-title>
                                                 <mat-card-subtitle></mat-card-subtitle>
                                                 <img mat-card-sm-image
-                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="柴犬の画像">
+                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                                                    alt="柴犬の画像">
                                             </mat-card-title-group>
                                         </mat-card-header>
                                         <mat-card-content>

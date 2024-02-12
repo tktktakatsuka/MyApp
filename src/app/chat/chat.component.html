@@ -1,15 +1,25 @@
-<p>チャットアプリ実装</p>
+<div class="chat">
+<h1>チャットアプリ実装</h1>
 
+<ng-container *ngFor="let comment of comments"><!--追加-->
+    <p>user : {{comment.userName}}</p>
+    <p>messsage : {{comment.content}}</p>
+    <br>
+</ng-container>
 
-<p>messsage : {{comment}}</p>
+<div class="">
+    <form class="example-form" (submit)="setComment(content, userName)">
+        <mat-form-field class="example-full-width">
+            <mat-label>ハンドルネーム</mat-label>
+            <input matInput [(ngModel)]="userName" name="userName" placeholder="たろう">
+        </mat-form-field>
 
-    <div class="row">
-        <form class="example-form" (submit)="dispComment(content)">
-            <mat-form-field class="mat-form-field">
-                <mat-label>ここにコメントを記載してください</mat-label>
-                <textarea matInput [(ngModel)]="content" name="content" placeholder="Comment"
-                    placeholder="間違いがありましたら指摘いただけると幸いです。"></textarea>
-            </mat-form-field>
-            <button type="submit" mat-raised-button color="primary">送信</button>
-        </form>
-    </div>
+        <mat-form-field class="mat-form-field">
+            <mat-label>ここにコメントを記載してください</mat-label>
+            <textarea matInput [(ngModel)]="content" name="content" placeholder="間違いがありましたら指摘いただけると幸いです。"></textarea>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary">送信</button>
+    </form>
+</div>
+</div>

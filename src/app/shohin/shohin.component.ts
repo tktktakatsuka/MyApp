@@ -21,15 +21,15 @@ interface Food {
 }
 
 @Component({
-  selector: 'app-menu',
+  selector: 'app-shohin',
   standalone: true,
-  templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css',
+  templateUrl: './shohin.component.html',
+  styleUrl: './shohin.component.css',
   imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatSelectModule,
     MatInputModule, FormsModule, HttpClientModule, CommonModule, MatDividerModule, MatProgressSpinnerModule],
 })
 
-export class MenuComponent implements AfterViewInit {
+export class ShohinComponent implements AfterViewInit {
 
   constructor(private http: HttpClient, private meta: Meta) {
     for (let i: number = 0; i < 30; i++) {
@@ -255,7 +255,6 @@ export class MenuComponent implements AfterViewInit {
     //   this.getSyokaiLoad();
     //   this.syokaiFlg = false;
     // }
-
   }
 
 }

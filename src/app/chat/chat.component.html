@@ -1,0 +1,15 @@
+<p>チャットアプリ実装</p>
+
+
+<p>messsage : {{comment}}</p>
+
+    <div class="row">
+        <form class="example-form" (submit)="dispComment(content)">
+            <mat-form-field class="mat-form-field">
+                <mat-label>ここにコメントを記載してください</mat-label>
+                <textarea matInput [(ngModel)]="content" name="content" placeholder="Comment"
+                    placeholder="間違いがありましたら指摘いただけると幸いです。"></textarea>
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary">送信</button>
+        </form>
+    </div>

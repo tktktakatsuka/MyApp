@@ -29,8 +29,8 @@ export class ChatComponent {
   constructor(){ 
   }
 
-  setComment(content: string, userName: string) {
-    const newComment = { userName: userName, content: content };
+  setComment() {
+    const newComment = { userName: this.userName, content:  this.content };
     this.comments.push(newComment);
   }
 }

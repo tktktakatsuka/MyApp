@@ -11,12 +11,12 @@
     <form class="example-form" (submit)="setComment()">
         <mat-form-field class="example-full-width">
             <mat-label>ハンドルネーム</mat-label>
-            <input matInput [(ngModel)]="userName" name="userName" placeholder="たろう">
+            <input matInput [(ngModel)]="userName" name="userName" placeholder="名前をいれてね">
         </mat-form-field>
 
         <mat-form-field class="mat-form-field">
             <mat-label>ここにコメントを記載してください</mat-label>
-            <textarea matInput [(ngModel)]="content" name="content" placeholder="間違いがありましたら指摘いただけると幸いです。"></textarea>
+            <textarea matInput [(ngModel)]="content" name="content" placeholder="コメントしてね"></textarea>
         </mat-form-field>
 
         <button type="submit" mat-raised-button color="primary">送信</button>

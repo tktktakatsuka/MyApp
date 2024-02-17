@@ -7,6 +7,7 @@ import { article001Component } from './article001/article001.component';
 import { article002Component } from './article002/article002.component';
 import { article003Component } from './article003/article003.component';
 import { article004Component } from './article004/article004.component';
+import { article005Component } from './article005/article005.component';
 import { ChatComponent } from './chat/chat.component';
 
 
@@ -19,6 +20,7 @@ export const routes: Routes = [
     ,{ path: 'article002', component: article002Component }
     ,{ path: 'article003', component: article003Component }
     ,{ path: 'article004', component: article004Component }
+    ,{ path: 'article005', component: article005Component }
     ,{ path: 'chat', component: ChatComponent }
     
 ];

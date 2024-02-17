@@ -1,0 +1,192 @@
+<div class="menu">
+    <div class="">
+        <div class="article">
+            <div class="row">
+                <!--メインコンテンツ　ここから-->
+                <div class="col-xs-12 col-md-8 ">
+                    <div class="card h-0 mb-3 mr-3">
+                        <div class="card-body">
+                            <div class="">
+                                <h1 id="mainTitle">
+                                    <p>Angular(17.0)で作成したフォームを送信し、画面に表示する方法(チャットアプリを例題に)</p>
+                                </h1>
+
+                                <h4 id="目次">
+                                    <p><strong>目次</strong></p>
+                                </h4>
+                                <mat-list>
+                                    <mat-list-item><a
+                                            href="/article005#Angular(17.0)でフォームを送信し、画面に出力する方法">Angular(17.0)でフォームを送信し、画面に出力する方法</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#動作環境">動作環境</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#この記事の目標">この記事の目標</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#事前準備">事前準備</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#コンポーネントの追加">コンポーネントの追加</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#ルーティングの追加">ルーティングの追加</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#HTML、CSS、TSを実装する">HTML、CSS、TSを実装する</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#サーバを起動">サーバを起動</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#ソースコードの解説">ソースコードの解説</a></mat-list-item>
+                                    <mat-list-item><a href="/article005#課題">課題</a></mat-list-item>
+                                </mat-list>
+
+                                <br>
+                                <h2 id="Angular(17.0)でフォームを送信し、画面に出力する方法">Angular(17.0)でフォームを送信し、画面に出力する方法</h2>
+                                <p>Angular(17.0)でフォームを送信し、画面に出力する方法として、
+                                    「ngModel」というディレクティブ（Angularの拡張機能のこと）を利用することで実装することができます。
+                                    今回は、簡易的なChatアプリを実装し、ユーザーが入力した値を画面上に表示していく手順を解説していきます。</p>
+
+                                <h2 id="動作環境">動作環境</h2>
+                                <ul>
+                                    <li>・Windows 10</li>
+                                    <li>・Angular 17.0</li>
+                                    <li>・AngularMaterial 17.0</li>
+                                    <li>・VScode</li>
+                                </ul>
+
+
+                                <h2 id="この記事の目標">この記事の目標</h2>
+                                <p>この記事の目標として、入力フォームへ入力した値を画面に表示させることが目標です<a href="/chat">実装後の画面はこちら</a></p>
+
+                                <p>ユーザ名とコメントを入力し、送信ボタンを押下することでチャットが追加されることを確認できると思います。</p>
+                                <h2 id="事前準備">事前準備</h2>
+                                <p>事前準備として、Angularが動作すること、AngularMaterialをnpm上にインストールしてあることが前提です。
+                                    まだ完了していない方は、下の二つの手順を実施してください。</p>
+                                <ul>
+                                    <li><a href="/article001">・Angularの環境構築の手順</a></li>
+                                    <li><a href="/article002">・AngularMaterialのインストール手順</a></li>
+                                </ul>
+                                <p>※マストではありませんが、<a href="/article003">コンポーネントを追加する手順</a>も実施すると、
+                                    画面を作成していくイメージがつかめると思います。</p>
+
+
+                                <h2 id="コンポーネントの追加">コンポーネントの追加</h2>
+                                <p>まずはchatアプリのコンポーネントを作成を作成しましょう。
+                                    以下のコマンドをプロジェクトのルートディレクトリで実施し、
+                                    Chatアプリのコンポーネントを生成してください。
+                                </p>
+                                <p><code>{{ngGenerate}}</code></p>
+                                実際にコマンドを打つとこうなります。
+                                <img src="/assets/images/005_001.png" alt="Angulartest.PNG">
+                                appフォルダのchatフォルダ内にcss,html,tsファイルが作成されればOKです。
+
+                                <h2 id="ルーティングの追加">ルーティングの追加</h2>
+                                <p>次に、ルーティングの追加をしましょう。
+                                    今回は <a href="http://localhost:4200/chat">localhost:4200/chat</a>
+                                    とURLに打ち込むことで、chatアプリが表示されるような仕組みを実装します。
+
+                                <p>以下の2つのファイルを編集します。</p>
+                                <p>・app.component.htmlの内容を以下と一致させてください。</p>
+                                <p><code>{{appComponentText}}</code></p>
+                                <p>・app.routes.tsの内容を以下と一致させてください。</p>
+                                <pre><code>{{routeTsText}}</code></pre>
+                                <p>設定完了後、ng serveでサーバを起動し、以下の画面と同じ内容になっていればここまでの手順はOKです。</p>
+                                <img src="/assets/images/005_002.png" alt="Angulartest.PNG">
+                                
+                                <h2 id="HTML、CSS、TSを実装する">HTML、CSS、TSを実装する</h2>
+                                <p>次にChatアプリの見た目を整えていきます。
+                                    HTML、CSS、TSを編集します。
+                                </p>
+                                <p>・app.component.tsの内容を以下と一致させてください。</p>
+                                <pre><code>{{tsChatText}}</code></pre>
+                                <p>・chat.component.htmlの内容を以下と一致させてください。</p>
+                                <pre><code>{{HTMLChatText}}</code></pre>
+                                <p>・chat.component.cssの内容を以下と一致させてください。</p>
+                                <pre><code>{{CSSChatText}}</code></pre>
+
+
+                                <h2 id="サーバを起動">サーバを起動</h2>
+                                <p>my-appディレクトリに移動します。</p>
+                                <p><code>$ cd my-app</code></p>
+
+                                <p>サーバーを起動します。
+                                    http://localhost:4200でブラウザからアクセスします。</p>
+                                <div class="highlight">
+                                    <pre><code>C:\work\sample>cd my-app
+C:\work\sample\my-app>
+C:\work\sample\my-app>ng serve
+
+Initial Chunk Files | Names         |  Raw Size
+polyfills.js        | polyfills     |  83.46 kB |
+main.js             | main          |  22.09 kB |
+styles.css          | styles        |  95 bytes |
+
+                    | Initial Total | 105.64 kB
+
+Application bundle generation complete. [3.494 seconds]
+Watch mode enabled. Watching for file changes...
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+                        </code></pre>
+                                </div>
+                                <p><code>http://localhost:4200/chat</code>
+                                    にアクセスし、画面にChatアプリの画面が表示されればOKです。</p>
+                                <p>実際にハンドル名とコメントを記述し、送信ボタンを押下することでChatが追加されることを確認してみて下さい。</p>
+                                <img src="/assets/images/005_003.png" alt="Angulartest.PNG">
+
+                                
+                                <h2 id="ソースコードの解説">ソースコードの解説</h2>
+                                <br>
+                                <h4>HTMLファイル</h4>
+                                <p>HTMLファイルの11～23行目がポイントです。フォームタグの中にtextarea、input、buttonタグを実装しています。                                    
+                                    ngModelディレクティブはinputタグ、textareaタグへ記述し、双方向バインディングを実装しています。
+                                    ハンドルネームの箇所を例にすると、画面に入力したユーザ名はTSファイルの「userName」変数と結びつき、
+                                    送信ボタンを押下した際に、TSファイルのuserName変数へ渡すことができるようになっています。
+                                </p>
+                                <br>
+                                <h4>TSファイル</h4>
+                                <p>ngModelディレクティブを利用するために、FormsModuleのインポート宣言が必要です。(chat.component.ts 5行目)</p>
+                                <p>送信ボタンを押下したときに,26行目のsetComment()メソッドが実行され、
+                                    HTMLファイルから送信されたデータは17,18行目の変数(content, userName)へ格納されます。
+                                連想配列に格納し、commentsへ追加するような実装にしています。</p>
+                                <br>
+                                <h4>CSSファイル</h4>
+                                <p>CSSファイルはボタンの大きさなどを整えています。詳細は割愛します。</p>
+
+                                <h2 id ="課題">課題</h2>
+                                <p>このチャットアプリは簡易的なものであるため、ブラウザの更新時や、
+                                サーバを再起動させることで送信したチャットがなくなることが確認できると思います。
+                                削除されないようにするために、フォームから送信したデータをデータベース上に登録するような仕組みを実装し、
+                                表示するチャットを管理するとよいと思います。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--メインコンテンツ　ここまで-->
+
+                <!--サブコンテンツ　ここから-->
+                <div class="col-xs-12 col-md-4 ">
+                    <!--カード　ここから-->
+                    <div class="container mb-6">
+                        <div class="card-deck ">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <mat-card class="example-card">
+                                        <mat-card-header>
+                                            <mat-card-title-group>
+                                                <mat-card-title>とある都内のSE</mat-card-title>
+                                                <mat-card-subtitle></mat-card-subtitle>
+                                                <img mat-card-sm-image
+                                                    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                                                    alt="柴犬の画像">
+                                            </mat-card-title-group>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <p>現役SEしています。Angularを現場で使うことになり、自身の理解力向上の為情報発信を始めました。
+                                                このサイトもAngular17で作成されています。<br>
+                                                ラーメンが好き。
+
+                                                <a class="twitter-timeline"
+                                                    href="https://twitter.com/tk241277687?ref_src=twsrc%5Etfw">twitterのリンクはこちら</a>
+                                                <script async src="https://platform.twitter.com/widgets.js"
+                                                    charset="utf-8"></script>
+                                            </p>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--カード　ここまで-->
+                </div>
+            </div>
+        </div>
+    </div>

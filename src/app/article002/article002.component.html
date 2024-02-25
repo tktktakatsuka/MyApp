@@ -40,7 +40,7 @@
                                     <li>・VScode</li>
                                 </ul>
 
-                                
+
                                 <h2 id="この記事の目標">この記事の目標</h2>
                                 <p>今回はUIコンポーネントを提供するAngularMaterialを利用し、
                                     クリックすることで色が変わるトグルを作成しようと思います。完成イメージは以下です。</p>
@@ -67,17 +67,34 @@
                                     まだ未作成の人は以下のリンクから適宜作成をお願いします。</p>
                                 <a href="/article001">Angularの導入から動作確認までの手順</a>
 
-                                <div class="highlight">
-                                    <p>app.component.ts</p>
-                                    <pre><code>{{typeScriptStr}}</code></pre>
+
+
+                                <div class="fileText">
+                                    <div class="codeHeader">
+                                        <header class="header">app.component.ts</header>
+                                        <div class="headed-code">
+                                            <pre
+                                                class="lang- prettyprint"><button (click)="exeClipbordCopy('typeScriptStr')" class="material-icons copy-button no-print ng-star-inserted">content_copy</button><br><div id ="typeScriptStr">{{typeScriptStr}}</div></pre>
+                                            <br>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <h2 id="ファイルの編集（HTML）">ファイルの編集（HTML）</h2>
                                 <p>TTypeScriptの記述が完了したら、HTMLファイルを編集します。</p>
-                                <div class="highlight">
-                                    <p>app.component.html</p>
-                                    <pre><code>{{htmltStr}}</code></pre>
+
+                                
+                                <div class="fileText">
+                                    <div class="codeHeader">
+                                        <header class="header">app.component.html</header>
+                                        <div class="headed-code">
+                                            <pre
+                                                class="lang- prettyprint"><button (click)="exeClipbordCopy('htmltStr')" class="material-icons copy-button no-print ng-star-inserted">content_copy</button><br><div id ="htmltStr">{{htmltStr}}</div></pre>
+                                            <br>
+                                        </div>
+                                    </div>
                                 </div>
+
 
 
                                 <h2 id="サーバを起動">サーバを起動</h2>
@@ -87,22 +104,7 @@
                                 <p>サーバーを起動します。
                                     http://localhost:4200でブラウザからアクセスします。</p>
                                 <div class="highlight">
-                                    <pre><code>C:\work\sample>cd my-app
-C:\work\sample\my-app>
-C:\work\sample\my-app>ng serve
-
-Initial Chunk Files | Names         |  Raw Size
-polyfills.js        | polyfills     |  83.46 kB |
-main.js             | main          |  22.09 kB |
-styles.css          | styles        |  95 bytes |
-
-                    | Initial Total | 105.64 kB
-
-Application bundle generation complete. [3.494 seconds]
-Watch mode enabled. Watching for file changes...
-  ➜  Local:   http://localhost:4200/
-  ➜  press h + enter to show help
-                        </code></pre>
+                                    <pre><code>{{ngserve}}</code></pre>
                                 </div>
                                 <p>デフォルトの場合は<code>http://localhost:4200</code>
                                     にアクセスし、画面にトグルが表示できれば、AngularMaterialの導入は完了です。</p>
@@ -117,6 +119,7 @@ Watch mode enabled. Watching for file changes...
 
                                 <p>公式サイトにはほかにもたくさんのコンポーネントが存在しているので、参考にしてみてください。</p>
                                 <a href="https://material.angular.io/">>AngularMaterialの公式サイト</a>
+
                             </div>
                         </div>
                     </div>
@@ -157,6 +160,9 @@ Watch mode enabled. Watching for file changes...
                         </div>
                     </div>
                     <!--カード　ここまで-->
+                    <div class="alert alert-primary" role="alert">
+                        コピーしました！
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import {Modal} from '../common/modal';
-
+import { Modal } from '../common/modal';
 
 @Component({
   selector: 'app-home',
@@ -75,14 +74,12 @@ export class article002Component {
     // クリップボードにコピー
     navigator.clipboard.writeText(copyString);
 
-    
     // フラッシュメッセージ表示
     // const  modal = new Modal();
     // modal.openModal($('#exampleModal'));
-    
+
     $('.alert').fadeIn();
     $('.alert').fadeOut();
-    
   }
 
   hoge(idName: any) {

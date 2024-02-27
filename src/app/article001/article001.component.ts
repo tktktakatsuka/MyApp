@@ -27,12 +27,6 @@ export class article001Component {
 
     // クリップボードにコピー
     navigator.clipboard.writeText(copyString);
-
-    // フラッシュメッセージ表示
-    $('.success-msg').fadeIn("slow", function () {
-      $(this).delay(2000).fadeOut("slow");
-    });
-
     
   }
 

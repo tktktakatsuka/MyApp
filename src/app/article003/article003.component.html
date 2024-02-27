@@ -32,13 +32,21 @@
                                 <p class=AngularHello><img src="/assets/images/003_001.png" alt="component追加"
                                         alt="Angulartest.PNG">
 
-
                                 <h2 id="">app.routes.tsファイルの内容を下記と同じにする。</h2>
-                                <p>
-                                <pre><code [innerHTML]>{{routeText}}</code></pre>
-                                <br>
+                                <div class="fileText">
+                                    <div class="codeHeader">
+                                        <header class="header">app.component.ts</header>
+                                        <div class="headed-code">
+                                            <pre
+                                                class="lang- prettyprint"><button (click)="exeClipbordCopy('typeScriptStr')" class="material-icons copy-button no-print ng-star-inserted">content_copy</button><br><div id ="routeText">{{routeText}}</div></pre>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
 
-
+                                <h2 id="サーバの起動と動作確認">サーバの起動と動作確認</h2>
+                                <p>my-appディレクトリに移動します。</p>
+                                <p><code>$ cd my-app</code></p>
                                 <p>サーバーを起動します。
                                     http://localhost:4200でブラウザからアクセスします。</p>
                                 <div class="highlight">
@@ -119,6 +127,11 @@ Watch mode enabled. Watching for file changes...
                         </div>
                     </div>
                     <!--カード　ここまで-->
+
+
+                </div>
+                <div class="alert alert-primary" role="alert">
+                    コピーしました！
                 </div>
             </div>
         </div>

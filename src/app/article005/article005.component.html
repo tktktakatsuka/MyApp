@@ -22,7 +22,8 @@
                                     <mat-list-item><a href="/article005#事前準備">事前準備</a></mat-list-item>
                                     <mat-list-item><a href="/article005#コンポーネントの追加">コンポーネントの追加</a></mat-list-item>
                                     <mat-list-item><a href="/article005#ルーティングの追加">ルーティングの追加</a></mat-list-item>
-                                    <mat-list-item><a href="/article005#HTML、CSS、TSを実装する">HTML、CSS、TSを実装する</a></mat-list-item>
+                                    <mat-list-item><a
+                                            href="/article005#HTML、CSS、TSを実装する">HTML、CSS、TSを実装する</a></mat-list-item>
                                     <mat-list-item><a href="/article005#サーバを起動">サーバを起動</a></mat-list-item>
                                     <mat-list-item><a href="/article005#ソースコードの解説">ソースコードの解説</a></mat-list-item>
                                     <mat-list-item><a href="/article005#課題">課題</a></mat-list-item>
@@ -80,7 +81,7 @@
                                 <pre><code>{{routeTsText}}</code></pre>
                                 <p>設定完了後、ng serveでサーバを起動し、以下の画面と同じ内容になっていればここまでの手順はOKです。</p>
                                 <img src="/assets/images/005_002.png" alt="Angulartest.PNG">
-                                
+
                                 <h2 id="HTML、CSS、TSを実装する">HTML、CSS、TSを実装する</h2>
                                 <p>次にChatアプリの見た目を整えていきます。
                                     HTML、CSS、TSを編集します。
@@ -122,11 +123,11 @@ Watch mode enabled. Watching for file changes...
                                 <p>実際にハンドル名とコメントを記述し、送信ボタンを押下することでChatが追加されることを確認してみて下さい。</p>
                                 <img src="/assets/images/005_003.png" alt="Angulartest.PNG">
 
-                                
+
                                 <h2 id="ソースコードの解説">ソースコードの解説</h2>
                                 <br>
                                 <h4>HTMLファイル</h4>
-                                <p>HTMLファイルの11～23行目がポイントです。フォームタグの中にtextarea、input、buttonタグを実装しています。                                    
+                                <p>HTMLファイルの11～23行目がポイントです。フォームタグの中にtextarea、input、buttonタグを実装しています。
                                     ngModelディレクティブはinputタグ、textareaタグへ記述し、双方向バインディングを実装しています。
                                     ハンドルネームの箇所を例にすると、画面に入力したユーザ名はTSファイルの「userName」変数と結びつき、
                                     送信ボタンを押下した際に、TSファイルのuserName変数へ渡すことができるようになっています。
@@ -136,16 +137,16 @@ Watch mode enabled. Watching for file changes...
                                 <p>ngModelディレクティブを利用するために、FormsModuleのインポート宣言が必要です。(chat.component.ts 5行目)</p>
                                 <p>送信ボタンを押下したときに,26行目のsetComment()メソッドが実行され、
                                     HTMLファイルから送信されたデータは17,18行目の変数(content, userName)へ格納されます。
-                                連想配列に格納し、commentsへ追加するような実装にしています。</p>
+                                    連想配列に格納し、commentsへ追加するような実装にしています。</p>
                                 <br>
                                 <h4>CSSファイル</h4>
                                 <p>CSSファイルはボタンの大きさなどを整えています。詳細は割愛します。</p>
 
-                                <h2 id ="課題">課題</h2>
+                                <h2 id="課題">課題</h2>
                                 <p>このチャットアプリは簡易的なものであるため、ブラウザの更新時や、
-                                サーバを再起動させることで送信したチャットがなくなることが確認できると思います。
-                                削除されないようにするために、フォームから送信したデータをデータベース上に登録するような仕組みを実装し、
-                                表示するチャットを管理するとよいと思います。</p>
+                                    サーバを再起動させることで送信したチャットがなくなることが確認できると思います。
+                                    削除されないようにするために、フォームから送信したデータをデータベース上に登録するような仕組みを実装し、
+                                    表示するチャットを管理するとよいと思います。</p>
                             </div>
                         </div>
                     </div>
@@ -186,6 +187,9 @@ Watch mode enabled. Watching for file changes...
                         </div>
                     </div>
                     <!--カード　ここまで-->
+                    <div class="alert alert-primary" role="alert">
+                        コピーしました！
+                    </div>
                 </div>
             </div>
         </div>

@@ -73,5 +73,20 @@ export class article004Component {
   + "<app-spinner></app-spinner>\r\n"
   + "";
 
+  exeClipbordCopy(idName: any) {
+    // data-urlの値を取得
+    let copy = document.getElementById(idName);
+    let copyString: any = copy?.textContent;
+
+    // クリップボードにコピー
+    navigator.clipboard.writeText(copyString);
+
+    // フラッシュメッセージ表示
+    // const  modal = new Modal();
+    // modal.openModal($('#exampleModal'));
+
+    $('.alert').fadeIn();
+    $('.alert').fadeOut();
+  }
 }
 

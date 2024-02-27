@@ -2,3 +2,44 @@ p,
 a{
     margin-left: 20px;
 }
+
+
+.header {
+    background-color: #1e88e5;
+    padding-left: 15px;
+  }
+  
+  .codeHeader {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.6rem;
+    color: #fafafa;
+  }
+  
+  .prettyprint {
+    background-color: white;
+    font-family: Roboto Mono, monospace;
+    font-size: 90%;
+    border: 0.5px solid #dbdbdb;
+    padding-left: 15px;
+  }
+  
+  .material-icons {
+    text-align: right;
+  }
+  
+  .alert {
+    color: white;
+    position: fixed;
+    bottom: 10px; /* 適切な値を設定してください */
+    left: 50%; /* メッセージを中央に配置する場合 */
+    transform: translateX(-50%);
+    background-color: black;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999; /* 他の要素よりも前面に表示されるようにします */
+    display: none; /* 初期状態では非表示にします */
+  }
+  

@@ -1,8 +1,8 @@
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Routes } from '@angular/router';
-import { ShohinComponent } from './shohin/shohin.component';
-import { RecipeComponent } from './recipe/recipe.component';
+// import { ShohinComponent } from './shohin/shohin.component';
+// import { RecipeComponent } from './recipe/recipe.component';
 import { article001Component } from './article001/article001.component';
 import { article002Component } from './article002/article002.component';
 import { article003Component } from './article003/article003.component';
@@ -14,8 +14,8 @@ import { ChatComponent } from './chat/chat.component';
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent }
-    ,{ path: 'shohin', component: ShohinComponent }
-    ,{ path: 'recipe', component: RecipeComponent }
+    // ,{ path: 'shohin', component: ShohinComponent }
+    // ,{ path: 'recipe', component: RecipeComponent }
     ,{ path: 'article001', component: article001Component }
     ,{ path: 'article002', component: article002Component }
     ,{ path: 'article003', component: article003Component }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { ShohinComponent } from "./shohin/shohin.component";
+// import { ShohinComponent } from "./shohin/shohin.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -20,7 +20,7 @@ import { MatCardModule } from '@angular/material/card';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [CommonModule, RouterOutlet, ShohinComponent, DashboardComponent,
+  imports: [CommonModule, RouterOutlet,  DashboardComponent,
     MatSlideToggleModule, MatIconModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, IgxCardModule, MatSidenavModule, MatButtonModule,MatCardModule]
 
 })

@@ -24,6 +24,11 @@ article {
   background-size: cover;
 }
 
+.example-header-image2 {
+  background-image: url('./favicon.ico');
+  background-size: cover;
+}
+
 
 
 .img-frame {

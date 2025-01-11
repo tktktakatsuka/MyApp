@@ -1,8 +1,12 @@
 {
   "hosting": {
 
-    "trailingSlash": false,
+    "hosting": {
+      "https": true
+    },
 
+    "trailingSlash": false,
+    
     "public": "dist/browser",
     "ignore": [
       "firebase.json",
@@ -17,4 +21,5 @@
   "database": {
     "rules": "database.rules.json"
   }
+
 }

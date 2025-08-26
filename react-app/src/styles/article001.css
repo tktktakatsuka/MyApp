@@ -1,0 +1,43 @@
+p {
+  margin-left: 20px;
+}
+
+.header {
+  background-color: #1e88e5;
+  padding-left: 15px;
+}
+
+.codeHeader {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.6rem;
+  color: #fafafa;
+}
+
+.prettyprint {
+  background-color: white;
+  font-family: Roboto Mono, monospace;
+  font-size: 90%;
+  border: 0.5px solid #dbdbdb;
+  padding-left: 15px;
+}
+
+.material-icons {
+  text-align: right;
+}
+
+.alert {
+  color: white;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 9999;
+  display: none;
+}
+

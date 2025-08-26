@@ -1,0 +1,77 @@
+.menu {
+  background-color: #ccc;
+  padding-left: 15px;
+}
+
+img {
+  width: 250px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+article {
+  margin-left: 20px;
+}
+
+.menu li {
+  padding: 4px 8px;
+  display: inline-block;
+}
+
+.example-header-image {
+  background-image: url('/favicon.ico');
+  background-size: cover;
+}
+
+.example-header-image2 {
+  background-image: url('/favicon.ico');
+  background-size: cover;
+}
+
+.img-frame {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+img:hover {
+  transition: 0.3s;
+  transform: scale(1.3);
+}
+
+.zyanruform {
+  width: 400px;
+  margin-left: 20px;
+}
+
+.divZyanruform {
+  display: inline-grid !important;
+  margin: 0 auto !important;
+}
+
+.example-button-row {
+  margin-left: 20px;
+}
+
+.title {
+  text-align: center;
+  color: rgb(3, 20, 22);
+  font-size: 20px;
+}
+
+mat-card-title {
+  font-size: 0.8em;
+}
+
+.row { display: flex; flex-wrap: wrap; }
+.col-sm-6 { width: 100%; max-width: 50%; box-sizing: border-box; }
+.col-xs-12 { width: 100%; }
+.col-md-8 { width: 100%; max-width: 66.6666%; }
+.col-md-4 { width: 100%; max-width: 33.3333%; }
+.card { border: 1px solid #e0e0e0; border-radius: 8px; background: #fff; }
+.card-body { padding: 12px; }
+.example-card { padding: 8px; border: 1px solid #eaeaea; border-radius: 8px; }
+.record { margin-bottom: 16px; }
+
+
+
+
